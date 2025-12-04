@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import mie243FinalRender from "@/assets/projects/mie243-final-render.png";
 import mie243Hexapod from "@/assets/projects/mie243-hexapod.png";
 import mie243Robot from "@/assets/projects/mie243-robot.png";
 import mie243Sketch from "@/assets/projects/mie243-sketch.png";
@@ -57,15 +58,14 @@ const MIE243Project = () => {
               </p>
             </div>
 
-            {/* Main Image - Hexapod Robot (Rotated 90° left) */}
+            {/* Main Image - Final CAD Render */}
             <div className="mb-12">
               <div className="rounded-xl shadow-lg border border-border bg-card">
-                <div className="flex justify-center items-center bg-muted/30 p-8 min-h-[500px]">
+                <div className="flex justify-center items-center bg-muted/30 p-4">
                   <img 
-                    src={mie243Hexapod} 
+                    src={mie243FinalRender} 
                     alt="Final design CAD render of robot arm with hexapod base" 
-                    className="max-h-[450px] w-auto object-contain"
-                    style={{ transform: 'rotate(-90deg)' }}
+                    className="w-full h-auto object-contain"
                   />
                 </div>
                 <div className="p-4 border-t border-border">
