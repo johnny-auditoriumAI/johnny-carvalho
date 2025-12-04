@@ -47,7 +47,7 @@ const Contact = () => {
 
             <div className="space-y-4">
               <a 
-                href="mailto:johnny.campos@utoronto.ca"
+                href="mailto:johnny.carvalho@mail.utoronto.ca"
                 className="flex items-center gap-4 p-4 bg-card rounded-lg border border-border hover:border-accent/50 hover:shadow-md transition-all group"
               >
                 <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
@@ -55,12 +55,12 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground">Email</p>
-                  <p className="text-sm text-muted-foreground">johnny.campos@utoronto.ca</p>
+                  <p className="text-sm text-muted-foreground">johnny.carvalho@mail.utoronto.ca</p>
                 </div>
               </a>
 
               <a 
-                href="https://linkedin.com/in/johnnycampos"
+                href="https://www.linkedin.com/in/joao-de-campos-carvalho-32a269334/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-card rounded-lg border border-border hover:border-accent/50 hover:shadow-md transition-all group"
@@ -75,7 +75,7 @@ const Contact = () => {
               </a>
 
               <a 
-                href="https://github.com/johnnycampos"
+                href="https://github.com/johnny-carp0s"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-card rounded-lg border border-border hover:border-accent/50 hover:shadow-md transition-all group"
