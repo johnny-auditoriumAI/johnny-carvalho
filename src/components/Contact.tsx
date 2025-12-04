@@ -5,6 +5,7 @@ import { Mail, Linkedin, Github, Send, Download } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import signature from "@/assets/signature.png";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -188,6 +189,15 @@ const Contact = () => {
               </Button>
             </form>
           </div>
+        </div>
+
+        {/* Signature */}
+        <div className="mt-16 flex justify-center">
+          <img 
+            src={signature} 
+            alt="Johnny Campos signature" 
+            className="h-24 md:h-32 w-auto opacity-80 dark:invert"
+          />
         </div>
       </div>
     </section>
