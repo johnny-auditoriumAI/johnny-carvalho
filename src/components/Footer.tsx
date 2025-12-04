@@ -1,5 +1,4 @@
 import { Mail, Linkedin, Github } from "lucide-react";
-import signature from "@/assets/signature.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -72,11 +71,6 @@ const Footer = () => {
                   <Github className="w-5 h-5 text-primary-foreground group-hover:text-accent-foreground" />
                 </a>
               </div>
-              <img 
-                src={signature} 
-                alt="Johnny Campos signature" 
-                className="w-40 h-auto brightness-0 invert opacity-80"
-              />
             </div>
           </div>
 
