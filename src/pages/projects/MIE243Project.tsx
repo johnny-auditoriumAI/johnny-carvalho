@@ -131,44 +131,52 @@ const MIE243Project = () => {
               
               <h3 className="text-xl font-semibold text-primary mb-4">Problem Definition & Research</h3>
               <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                The project began with extensive research into existing camera systems used in professional sports 
-                broadcasting. Our team analyzed the Skycam, Spidercam, and various robotic arm systems to understand 
-                their capabilities and limitations. We identified the need for a system that could provide smooth, 
-                high-speed tracking shots while maintaining stability on uneven terrain—requirements that led us to 
-                explore hexapod platforms combined with articulated arm designs.
+                The project addressed a gap in the cinematography industry: the lack of affordable, accessible robotic arms 
+                for hobbyist filmmakers. Professional systems like track-mounted dollies and Steadicams are expensive, heavy, 
+                and require skilled operators. Our goal was to create a long-reach robotic arm that offers smooth, repeatable 
+                motion while remaining affordable (under $5,000 CAD) and easy to assemble.
+              </p>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-6">
+                Extensive research was conducted on existing systems including Universal Robots UR5/UR10, Franka Emika Panda, 
+                and Kinova Gen3. We analyzed drive mechanisms, gear reduction systems, material selection, motor configurations, 
+                camera-mounting interfaces, and safety features to establish engineering requirements.
               </p>
 
-              <h3 className="text-xl font-semibold text-primary mb-4">Concept Development</h3>
+              <h3 className="text-xl font-semibold text-primary mb-4">Ideation & Candidate Selection</h3>
               <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                I contributed to the conceptual development phase by exploring multiple base configurations. We evaluated 
-                wheeled platforms, tracked systems, and legged robots before settling on a Stewart platform-inspired hexapod 
-                base. This choice was driven by the need for precise positioning and stability during camera operation, 
-                as well as the ability to navigate varied terrain at sporting venues.
+                The ideation phase produced seven candidate concepts through structured methods including Black Box modeling, 
+                Blue-Sky Thinking, Morph Chart development, and SCAMPER iteration. Designs were evaluated using multi-voting, 
+                pair-wise objective comparison, and a weighted decision matrix against eight key objectives: stability, reach 
+                (≥1m radius), degrees of freedom, vibration control (≤3 Hz), motion speed, and assembly requirements.
+              </p>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-6">
+                Design 6—a multi-DOF robotic arm with planetary gear transmissions—was selected for its optimal balance of 
+                stability, workspace size, dynamic capability, and feasibility. Subsequent refinement led to a 5-DOF 
+                configuration (eliminating redundant freedom) with a redesigned hexapod base for enhanced stability and portability.
               </p>
 
-              <h3 className="text-xl font-semibold text-primary mb-4">Mechanical Design & CAD Modeling</h3>
+              <h3 className="text-xl font-semibold text-primary mb-4">Kinematic & Dynamic Modeling</h3>
               <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                My primary contributions were in the mechanical design domain. I developed detailed SolidWorks models 
-                for the hexapod base assembly, including the universal joints, linear actuators, and mounting platforms. 
-                The design required careful attention to kinematics—ensuring the platform could achieve the required 
-                range of motion while supporting the weight and dynamic loads of the camera arm.
+                A full kinematic and dynamic model was implemented in Python using the Product of Exponentials (POE) formulation. 
+                The model evaluated gravity loads and joint speed requirements across the robot's workspace to derive torque 
+                specifications: J2 (Shoulder Pitch) at 271 N·m design torque, J3 (Elbow Pitch) at 104.1 N·m, and J5 (Wrist Pitch) 
+                at 19.7 N·m. A 1.5× safety margin was applied to account for modeling uncertainties.
               </p>
 
-              <h3 className="text-xl font-semibold text-primary mb-4">Planetary Gearbox Design</h3>
+              <h3 className="text-xl font-semibold text-primary mb-4">Motor & Gearbox Selection</h3>
               <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                A key technical challenge was designing custom planetary gearboxes for each joint of the camera arm. 
-                I performed torque and speed calculations to determine gear ratios, selected appropriate module sizes 
-                and tooth counts, and designed the housing to integrate with NEMA 23 stepper motors. The planetary 
-                configuration was chosen for its compact form factor and high torque density—critical for the articulated 
-                arm where space and weight are constrained.
+                Motor selection was driven by the torque analysis. NEMA 34 motors (4.5 N·m) were specified for the high-torque 
+                shoulder joint with a 76:1 gear ratio. NEMA 23 motors (4.24 N·m) power the elbow with 36:1 reduction, while 
+                compact NEMA 17 motors (0.6 N·m) handle the wrist pitch with 26:1 gearing. Planetary gearboxes were chosen 
+                for their compact size, low backlash, and high torque density—critical for smooth cinematic motion.
               </p>
 
-              <h3 className="text-xl font-semibold text-primary mb-4">Analysis & Optimization</h3>
+              <h3 className="text-xl font-semibold text-primary mb-4">Materials & Manufacturing</h3>
               <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                Throughout the design process, I conducted motion analysis to verify the system could achieve required 
-                angular velocities for tracking fast-moving subjects. Material selection was optimized to balance weight 
-                and stiffness—using aluminum alloys for structural members and steel for high-stress components like 
-                gears and shafts. FEA was used to validate critical components under expected loading conditions.
+                Structural components use 6061-T6 aluminum for its strength-to-weight ratio and machinability. Gear trains 
+                are fabricated from 42CrMo4 steel, which exceeds bending and contact stress requirements. ABS housings provide 
+                lightweight protection for internal components while reducing cost. The final cost of $3,713.52 CAD came in 
+                well under the $5,000 budget, demonstrating feasibility for hobbyist cinematographers.
               </p>
             </div>
 
