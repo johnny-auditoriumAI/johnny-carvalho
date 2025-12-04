@@ -1,4 +1,4 @@
-import { ArrowLeft, Camera, Cog, Target } from "lucide-react";
+import { ArrowLeft, Camera, Cog, Target, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import mie243Hexapod from "@/assets/projects/mie243-hexapod.png";
 import mie243Robot from "@/assets/projects/mie243-robot.png";
 import mie243Sketch from "@/assets/projects/mie243-sketch.png";
+import mie243Gearbox from "@/assets/projects/mie243-gearbox.png";
+import mie243HexapodDrawing from "@/assets/projects/mie243-hexapod-drawing.png";
 
 const MIE243Project = () => {
   return (
@@ -55,26 +57,67 @@ const MIE243Project = () => {
               </p>
             </div>
 
-            {/* Image Gallery */}
+            {/* Main Image - Hexapod Robot (Rotated 90° left) */}
+            <div className="mb-12">
+              <div className="rounded-xl overflow-hidden shadow-lg border border-border bg-card">
+                <div className="flex justify-center items-center bg-muted/30 p-4">
+                  <img 
+                    src={mie243Hexapod} 
+                    alt="Final design CAD render of robot arm with hexapod base" 
+                    className="w-full max-w-2xl h-auto object-contain"
+                    style={{ transform: 'rotate(-90deg)' }}
+                  />
+                </div>
+                <div className="p-4">
+                  <p className="text-sm text-muted-foreground font-medium">Final design CAD render</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Secondary Images Gallery */}
             <div className="grid md:grid-cols-2 gap-6 mb-16">
               <div className="rounded-xl overflow-hidden shadow-lg border border-border">
                 <img 
                   src={mie243Robot} 
-                  alt="Camera robot CAD model" 
+                  alt="Candidate design CAD - Mobile platform" 
                   className="w-full h-auto object-cover"
                 />
                 <div className="p-4 bg-card">
-                  <p className="text-sm text-muted-foreground">Mobile platform with camera mount system</p>
+                  <p className="text-sm text-muted-foreground">Candidate design CAD</p>
                 </div>
               </div>
               <div className="rounded-xl overflow-hidden shadow-lg border border-border">
                 <img 
-                  src={mie243Hexapod} 
-                  alt="Hexapod base design" 
-                  className="w-full h-auto object-cover"
+                  src={mie243Sketch} 
+                  alt="Design sketches and annotations" 
+                  className="w-full h-auto object-contain bg-white p-4"
                 />
                 <div className="p-4 bg-card">
-                  <p className="text-sm text-muted-foreground">Hexapod base with articulated arm design</p>
+                  <p className="text-sm text-muted-foreground">Initial design sketches</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Technical Images Gallery */}
+            <div className="grid md:grid-cols-2 gap-6 mb-16">
+              <div className="rounded-xl overflow-hidden shadow-lg border border-border">
+                <img 
+                  src={mie243Gearbox} 
+                  alt="Planetary gearbox CAD model" 
+                  className="w-full h-auto object-cover bg-muted/20"
+                />
+                <div className="p-4 bg-card">
+                  <p className="text-sm text-muted-foreground">Planetary gearbox CAD</p>
+                </div>
+              </div>
+              <div className="rounded-xl overflow-hidden shadow-lg border border-border">
+                <img 
+                  src={mie243HexapodDrawing} 
+                  alt="Hexapod base assembly technical drawing" 
+                  className="w-full h-auto object-cover bg-white"
+                />
+                <div className="p-4 bg-card">
+                  <p className="text-sm text-muted-foreground">Hexapod base assembly technical drawing</p>
                 </div>
               </div>
             </div>
@@ -85,32 +128,63 @@ const MIE243Project = () => {
                 <Camera className="w-8 h-8 text-accent" />
                 Design Process
               </h2>
+              
+              <h3 className="text-xl font-semibold text-primary mb-4">Problem Definition & Research</h3>
               <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                For this project, my team developed a long-reach robotic camera arm capable of 
-                producing smooth, repeatable motion for sports-focused filming. I contributed 
-                across the mechanical design process—from early research and specification 
-                development to CAD modelling and gearbox design.
+                The project began with extensive research into existing camera systems used in professional sports 
+                broadcasting. Our team analyzed the Skycam, Spidercam, and various robotic arm systems to understand 
+                their capabilities and limitations. We identified the need for a system that could provide smooth, 
+                high-speed tracking shots while maintaining stability on uneven terrain—requirements that led us to 
+                explore hexapod platforms combined with articulated arm designs.
               </p>
+
+              <h3 className="text-xl font-semibold text-primary mb-4">Concept Development</h3>
               <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                My work included exploring drive mechanisms, selecting materials, performing 
-                torque and motion analysis, and designing custom planetary gearboxes to meet 
-                joint-specific requirements. The final design integrated multi-stage gear 
-                reduction, a stable hexapod base, and a series of stepper-motor-driven joints 
-                tailored to cinematic motion control.
+                I contributed to the conceptual development phase by exploring multiple base configurations. We evaluated 
+                wheeled platforms, tracked systems, and legged robots before settling on a Stewart platform-inspired hexapod 
+                base. This choice was driven by the need for precise positioning and stability during camera operation, 
+                as well as the ability to navigate varied terrain at sporting venues.
+              </p>
+
+              <h3 className="text-xl font-semibold text-primary mb-4">Mechanical Design & CAD Modeling</h3>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-6">
+                My primary contributions were in the mechanical design domain. I developed detailed SolidWorks models 
+                for the hexapod base assembly, including the universal joints, linear actuators, and mounting platforms. 
+                The design required careful attention to kinematics—ensuring the platform could achieve the required 
+                range of motion while supporting the weight and dynamic loads of the camera arm.
+              </p>
+
+              <h3 className="text-xl font-semibold text-primary mb-4">Planetary Gearbox Design</h3>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-6">
+                A key technical challenge was designing custom planetary gearboxes for each joint of the camera arm. 
+                I performed torque and speed calculations to determine gear ratios, selected appropriate module sizes 
+                and tooth counts, and designed the housing to integrate with NEMA 23 stepper motors. The planetary 
+                configuration was chosen for its compact form factor and high torque density—critical for the articulated 
+                arm where space and weight are constrained.
+              </p>
+
+              <h3 className="text-xl font-semibold text-primary mb-4">Analysis & Optimization</h3>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-6">
+                Throughout the design process, I conducted motion analysis to verify the system could achieve required 
+                angular velocities for tracking fast-moving subjects. Material selection was optimized to balance weight 
+                and stiffness—using aluminum alloys for structural members and steel for high-stress components like 
+                gears and shafts. FEA was used to validate critical components under expected loading conditions.
               </p>
             </div>
 
-            {/* Sketch Image */}
-            <div className="mb-16">
-              <div className="rounded-xl overflow-hidden shadow-lg border border-border bg-card">
-                <img 
-                  src={mie243Sketch} 
-                  alt="Design sketches and annotations" 
-                  className="w-full h-auto object-contain bg-white p-4"
-                />
-                <div className="p-4">
-                  <p className="text-sm text-muted-foreground">Initial design sketches showing articulated arm concept with motor placement and belt drive system</p>
+            {/* Download Button */}
+            <div className="mb-16 p-6 rounded-xl bg-secondary/30 border border-border">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div>
+                  <h3 className="text-lg font-semibold text-primary mb-1">Design Specifications Document</h3>
+                  <p className="text-sm text-muted-foreground">Download the complete design specifications and technical documentation</p>
                 </div>
+                <a href="/MIE243-Design-Specifications.pdf" download>
+                  <Button className="gap-2">
+                    <Download className="w-4 h-4" />
+                    Download PDF
+                  </Button>
+                </a>
               </div>
             </div>
 
@@ -143,7 +217,7 @@ const MIE243Project = () => {
             <div className="mb-16">
               <h3 className="text-xl font-semibold text-primary mb-4">Technologies & Tools</h3>
               <div className="flex flex-wrap gap-2">
-                {["SolidWorks", "Motion Control", "Mechanical Design", "Gear Systems", "Torque Analysis", "Stepper Motors", "CAD Modeling"].map((tech) => (
+                {["SolidWorks", "Motion Control", "Mechanical Design", "Gear Systems", "Torque Analysis", "Stepper Motors", "CAD Modeling", "FEA", "Kinematics"].map((tech) => (
                   <Badge key={tech} variant="secondary" className="text-sm px-4 py-2">
                     {tech}
                   </Badge>
