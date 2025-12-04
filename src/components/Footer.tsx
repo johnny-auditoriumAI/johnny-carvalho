@@ -75,7 +75,7 @@ const Footer = () => {
               <img 
                 src={signature} 
                 alt="Johnny Campos signature" 
-                className="h-28 w-auto brightness-0 invert opacity-70"
+                className="w-40 h-auto brightness-0 invert opacity-80"
               />
             </div>
           </div>
