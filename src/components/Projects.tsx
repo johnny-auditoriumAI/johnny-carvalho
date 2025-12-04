@@ -18,7 +18,10 @@ const projects = [
     ],
     technologies: ["SolidWorks", "Motion Control", "Gear Systems", "Mechanical Design"],
     impact: "Robotics-focused engineering workflow",
-    route: "/projects/mie243"
+    route: "/projects/mie243",
+    bgColor: "bg-primary/5",
+    accentColor: "bg-primary/10",
+    hoverAccent: "bg-primary/20"
   },
   {
     icon: Cat,
@@ -31,9 +34,12 @@ const projects = [
       "User-centered design approach for pet owners",
       "Independent project from concept to public presentation"
     ],
-    technologies: ["Python", "Computer Vision", "OpenCV", "UI/UX"],
+    technologies: ["Python", "PyTorch", "OpenCV", "Computer Vision"],
     impact: "Entrepreneurial product development",
-    route: "/projects/cat-vision"
+    route: "/projects/cat-vision",
+    bgColor: "bg-accent/5",
+    accentColor: "bg-accent/10",
+    hoverAccent: "bg-accent/20"
   },
   {
     icon: Activity,
@@ -48,7 +54,10 @@ const projects = [
     ],
     technologies: ["Arduino", "Sensors", "Data Analysis", "Healthcare Tech"],
     impact: "Real-world healthcare design experience",
-    route: "/projects/aps112"
+    route: "/projects/aps112",
+    bgColor: "bg-secondary",
+    accentColor: "bg-muted",
+    hoverAccent: "bg-muted-foreground/10"
   },
 ];
 
@@ -67,11 +76,11 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card 
               key={index} 
-              className="hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card border-border group"
+              className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-border group ${project.bgColor}`}
             >
               <CardHeader>
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-                  <project.icon className="w-6 h-6 text-accent" />
+                <div className={`w-12 h-12 rounded-lg ${project.accentColor} flex items-center justify-center mb-4 group-hover:${project.hoverAccent} transition-colors`}>
+                  <project.icon className="w-6 h-6 text-primary" />
                 </div>
                 <div className="mb-2">
                   <Badge variant="outline" className="text-xs mb-2">{project.course}</Badge>
