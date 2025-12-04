@@ -128,56 +128,39 @@ const MIE243Project = () => {
                 <Camera className="w-8 h-8 text-accent" />
                 Design Process
               </h2>
-              
-              <h3 className="text-xl font-semibold text-primary mb-4">Problem Definition & Research</h3>
               <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                The project addressed a gap in the cinematography industry: the lack of affordable, accessible robotic arms 
-                for hobbyist filmmakers. Professional systems like track-mounted dollies and Steadicams are expensive, heavy, 
-                and require skilled operators. Our goal was to create a long-reach robotic arm that offers smooth, repeatable 
-                motion while remaining affordable (under $5,000 CAD) and easy to assemble.
+                For this project, my team developed a long-reach robotic camera arm capable of producing smooth, 
+                repeatable motion for sports-focused filming. I contributed across the mechanical design process—from 
+                early research and specification development to CAD modelling and gearbox design. This experience 
+                strengthened my understanding of how structured engineering workflows translate into functional 
+                robotic systems, reinforcing the kind of work I hope to pursue professionally.
               </p>
               <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                Extensive research was conducted on existing systems including Universal Robots UR5/UR10, Franka Emika Panda, 
-                and Kinova Gen3. We analyzed drive mechanisms, gear reduction systems, material selection, motor configurations, 
-                camera-mounting interfaces, and safety features to establish engineering requirements.
-              </p>
-
-              <h3 className="text-xl font-semibold text-primary mb-4">Ideation & Candidate Selection</h3>
-              <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                The ideation phase produced seven candidate concepts through structured methods including Black Box modeling, 
-                Blue-Sky Thinking, Morph Chart development, and SCAMPER iteration. Designs were evaluated using multi-voting, 
-                pair-wise objective comparison, and a weighted decision matrix against eight key objectives: stability, reach 
-                (≥1m radius), degrees of freedom, vibration control (≤3 Hz), motion speed, and assembly requirements.
-              </p>
-              <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                Design 6—a multi-DOF robotic arm with planetary gear transmissions—was selected for its optimal balance of 
-                stability, workspace size, dynamic capability, and feasibility. Subsequent refinement led to a 5-DOF 
-                configuration (eliminating redundant freedom) with a redesigned hexapod base for enhanced stability and portability.
+                My work included exploring drive mechanisms, selecting materials, performing torque and motion analysis, 
+                and designing custom planetary gearboxes to meet joint-specific requirements. The final design integrated 
+                multi-stage gear reduction, a stable hexapod base, and stepper-motor-driven joints tailored to 
+                cinematic motion control.
               </p>
 
-              <h3 className="text-xl font-semibold text-primary mb-4">Kinematic & Dynamic Modeling</h3>
-              <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                A full kinematic and dynamic model was implemented in Python using the Product of Exponentials (POE) formulation. 
-                The model evaluated gravity loads and joint speed requirements across the robot's workspace to derive torque 
-                specifications: J2 (Shoulder Pitch) at 271 N·m design torque, J3 (Elbow Pitch) at 104.1 N·m, and J5 (Wrist Pitch) 
-                at 19.7 N·m. A 1.5× safety margin was applied to account for modeling uncertainties.
-              </p>
-
-              <h3 className="text-xl font-semibold text-primary mb-4">Motor & Gearbox Selection</h3>
-              <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                Motor selection was driven by the torque analysis. NEMA 34 motors (4.5 N·m) were specified for the high-torque 
-                shoulder joint with a 76:1 gear ratio. NEMA 23 motors (4.24 N·m) power the elbow with 36:1 reduction, while 
-                compact NEMA 17 motors (0.6 N·m) handle the wrist pitch with 26:1 gearing. Planetary gearboxes were chosen 
-                for their compact size, low backlash, and high torque density—critical for smooth cinematic motion.
-              </p>
-
-              <h3 className="text-xl font-semibold text-primary mb-4">Materials & Manufacturing</h3>
-              <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                Structural components use 6061-T6 aluminum for its strength-to-weight ratio and machinability. Gear trains 
-                are fabricated from 42CrMo4 steel, which exceeds bending and contact stress requirements. ABS housings provide 
-                lightweight protection for internal components while reducing cost. The final cost of $3,713.52 CAD came in 
-                well under the $5,000 budget, demonstrating feasibility for hobbyist cinematographers.
-              </p>
+              <h3 className="text-xl font-semibold text-primary mb-4">Design Outline</h3>
+              <div className="space-y-4 mb-6">
+                <div className="p-4 rounded-lg bg-secondary/20 border border-border">
+                  <p className="font-medium text-foreground mb-1">1. Research & Problem Definition</p>
+                  <p className="text-sm text-muted-foreground">Analyzed existing systems (UR5, Franka Panda, Kinova Gen3) to establish engineering requirements for an affordable, hobbyist-friendly solution.</p>
+                </div>
+                <div className="p-4 rounded-lg bg-secondary/20 border border-border">
+                  <p className="font-medium text-foreground mb-1">2. Ideation & Selection</p>
+                  <p className="text-sm text-muted-foreground">Generated seven candidate concepts using structured methods. Selected a 5-DOF planetary gear design through weighted decision matrix evaluation.</p>
+                </div>
+                <div className="p-4 rounded-lg bg-secondary/20 border border-border">
+                  <p className="font-medium text-foreground mb-1">3. Kinematic Modeling</p>
+                  <p className="text-sm text-muted-foreground">Implemented Python-based dynamic model to derive torque specifications and validate motor/gearbox combinations with safety margins.</p>
+                </div>
+                <div className="p-4 rounded-lg bg-secondary/20 border border-border">
+                  <p className="font-medium text-foreground mb-1">4. Detailed Design & CAD</p>
+                  <p className="text-sm text-muted-foreground">Developed SolidWorks assemblies for hexapod base, planetary gearboxes, and structural components using 6061 aluminum and 42CrMo4 steel.</p>
+                </div>
+              </div>
             </div>
 
             {/* Download Button */}
