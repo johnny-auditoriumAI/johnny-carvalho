@@ -19,9 +19,9 @@ const projects = [
     technologies: ["SolidWorks", "Motion Control", "Gear Systems", "Mechanical Design"],
     impact: "Robotics-focused engineering workflow",
     route: "/projects/mie243",
-    bgColor: "bg-primary/5",
-    accentColor: "bg-primary/10",
-    hoverAccent: "bg-primary/20"
+    bgColor: "bg-primary/10 hover:bg-primary/15",
+    accentColor: "bg-primary/20",
+    borderColor: "border-primary/20 hover:border-primary/40"
   },
   {
     icon: Cat,
@@ -37,9 +37,9 @@ const projects = [
     technologies: ["Python", "PyTorch", "OpenCV", "Computer Vision"],
     impact: "Entrepreneurial product development",
     route: "/projects/cat-vision",
-    bgColor: "bg-accent/5",
-    accentColor: "bg-accent/10",
-    hoverAccent: "bg-accent/20"
+    bgColor: "bg-accent/10 hover:bg-accent/15",
+    accentColor: "bg-accent/20",
+    borderColor: "border-accent/20 hover:border-accent/40"
   },
   {
     icon: Activity,
@@ -55,9 +55,9 @@ const projects = [
     technologies: ["Arduino", "Sensors", "Data Analysis", "Healthcare Tech"],
     impact: "Real-world healthcare design experience",
     route: "/projects/aps112",
-    bgColor: "bg-secondary",
-    accentColor: "bg-muted",
-    hoverAccent: "bg-muted-foreground/10"
+    bgColor: "bg-muted/50 hover:bg-muted/70",
+    accentColor: "bg-muted-foreground/10",
+    borderColor: "border-muted-foreground/20 hover:border-muted-foreground/40"
   },
 ];
 
@@ -74,54 +74,53 @@ const Projects = () => {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {projects.map((project, index) => (
-            <Card 
-              key={index} 
-              className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-border group ${project.bgColor}`}
-            >
-              <CardHeader>
-                <div className={`w-12 h-12 rounded-lg ${project.accentColor} flex items-center justify-center mb-4 group-hover:${project.hoverAccent} transition-colors`}>
-                  <project.icon className="w-6 h-6 text-primary" />
-                </div>
-                <div className="mb-2">
-                  <Badge variant="outline" className="text-xs mb-2">{project.course}</Badge>
-                </div>
-                <CardTitle className="text-xl mb-2">{project.title}</CardTitle>
-                <CardDescription className="text-base">{project.description}</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  {project.details.map((detail, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <span className="text-accent mr-2 mt-1">▸</span>
-                      <span>{detail}</span>
-                    </li>
-                  ))}
-                </ul>
-                
-                <div className="pt-4 border-t border-border">
-                  <p className="text-xs font-semibold text-primary mb-2">Technologies:</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, idx) => (
-                      <Badge key={idx} variant="secondary" className="text-xs">
-                        {tech}
-                      </Badge>
-                    ))}
+            <Link to={project.route} key={index} className="block">
+              <Card 
+                className={`h-full hover:shadow-xl transition-all duration-300 hover:-translate-y-1 group cursor-pointer ${project.bgColor} ${project.borderColor}`}
+              >
+                <CardHeader>
+                  <div className={`w-12 h-12 rounded-lg ${project.accentColor} flex items-center justify-center mb-4 transition-colors`}>
+                    <project.icon className="w-6 h-6 text-primary" />
                   </div>
-                </div>
-                
-                <div className="pt-2 flex items-center justify-between">
-                  <p className="text-sm font-medium text-accent">
-                    ✓ {project.impact}
-                  </p>
-                  <Button variant="ghost" size="sm" asChild>
-                    <Link to={project.route} className="inline-flex items-center gap-1">
+                  <div className="mb-2">
+                    <Badge variant="outline" className="text-xs mb-2">{project.course}</Badge>
+                  </div>
+                  <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">{project.title}</CardTitle>
+                  <CardDescription className="text-base">{project.description}</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <ul className="space-y-2 text-sm text-muted-foreground">
+                    {project.details.map((detail, idx) => (
+                      <li key={idx} className="flex items-start">
+                        <span className="text-accent mr-2 mt-1">▸</span>
+                        <span>{detail}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <div className="pt-4 border-t border-border/50">
+                    <p className="text-xs font-semibold text-primary mb-2">Technologies:</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech, idx) => (
+                        <Badge key={idx} variant="secondary" className="text-xs">
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div className="pt-2 flex items-center justify-between">
+                    <p className="text-sm font-medium text-accent">
+                      ✓ {project.impact}
+                    </p>
+                    <span className="inline-flex items-center gap-1 text-sm text-primary font-medium group-hover:gap-2 transition-all">
                       Learn More
                       <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+                    </span>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
         </div>
       </div>
