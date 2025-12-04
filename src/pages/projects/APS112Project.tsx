@@ -1,4 +1,4 @@
-import { ArrowLeft, Activity, Users, Heart } from "lucide-react";
+import { ArrowLeft, Activity, Users, Heart, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -47,9 +47,10 @@ const APS112Project = () => {
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg">
                 This section presents a multidisciplinary design project completed in partnership 
-                with the University Health Network (UHN). It emphasizes my ability to work in a 
-                structured design environment focused on user needs, system requirements, and 
-                real-world constraints in healthcare technology.
+                with the University Health Network (UHN). Working with Dr. Tatyana Mollayeva from the 
+                Kite Research Institute, our team designed a sleep tracking system for retired adults 
+                aged 65-75. This project emphasized my ability to work in a structured design environment 
+                focused on user needs, stakeholder requirements, and real-world healthcare constraints.
               </p>
             </div>
 
@@ -62,7 +63,7 @@ const APS112Project = () => {
                   className="w-full h-auto object-cover"
                 />
                 <div className="p-4 bg-card">
-                  <p className="text-sm text-muted-foreground">Sleep monitoring device concept renders showing wearable and mat-integrated components</p>
+                  <p className="text-sm text-muted-foreground text-center">Smart-Slumber PJs concept renders showing wearable sensor boxes and charging mat</p>
                 </div>
               </div>
             </div>
@@ -74,16 +75,54 @@ const APS112Project = () => {
                 Design Process
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                In APS112, my team partnered with UHN to design a sleep monitoring system for 
-                retired adults. The project required deep consideration of usability, comfort, 
-                physiological measurement, data interpretation, and stakeholder requirements.
+                In APS112, my team partnered with UHN to design a sleep monitoring system addressing 
+                a gap in the market: the lack of affordable, easy-to-use sleep trackers for retired adults. 
+                I contributed to developing functional requirements, conducting stakeholder analysis, and 
+                participating in concept generation and selection. This experience reinforced my interest 
+                in user-centered product design within healthcare contexts.
               </p>
               <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                I contributed to developing functional requirements, conducting environmental 
-                and stakeholder analysis, and participating in concept generation and selection. 
-                Our final concept—a wearable and mat-integrated monitoring system—prioritized 
-                accessibility, accuracy, and ease of use for the target demographic.
+                Our final concept—the Smart-Slumber PJs—features wearable sensor boxes integrated into 
+                pajamas that measure heart rate, oxygen levels, body temperature, and movement. The design 
+                prioritized accessibility, accuracy (≥95% compared to clinical devices), and affordability 
+                (under $68 CAD) for the target demographic.
               </p>
+
+              <h3 className="text-xl font-semibold text-primary mb-4">Design Outline</h3>
+              <div className="space-y-4 mb-6">
+                <div className="p-4 rounded-lg bg-secondary/20 border border-border">
+                  <p className="font-medium text-foreground mb-1">1. Problem Definition & Stakeholder Analysis</p>
+                  <p className="text-sm text-muted-foreground">Identified gaps in existing solutions and mapped key stakeholders including family members, sleep research organizations, and medical insurance companies.</p>
+                </div>
+                <div className="p-4 rounded-lg bg-secondary/20 border border-border">
+                  <p className="font-medium text-foreground mb-1">2. Requirements Engineering</p>
+                  <p className="text-sm text-muted-foreground">Developed detailed functions, objectives, and constraints including weight limits (&lt;2.3kg), non-invasiveness, and accessibility standards for elderly users.</p>
+                </div>
+                <div className="p-4 rounded-lg bg-secondary/20 border border-border">
+                  <p className="font-medium text-foreground mb-1">3. Ideation & Selection</p>
+                  <p className="text-sm text-muted-foreground">Generated 119 ideas through brainstorming and morphological charts. Narrowed to 3 designs using multi-voting, graphical decision charts, and weighted decision matrix.</p>
+                </div>
+                <div className="p-4 rounded-lg bg-secondary/20 border border-border">
+                  <p className="font-medium text-foreground mb-1">4. Final Design & Specification</p>
+                  <p className="text-sm text-muted-foreground">Selected Smart-Slumber PJs using Pugh chart analysis. Developed detailed CAD models, component specifications, and success metrics.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Download Button */}
+            <div className="mb-16 p-6 rounded-xl bg-secondary/30 border border-border">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div>
+                  <h3 className="text-lg font-semibold text-primary mb-1">Design Specifications Document</h3>
+                  <p className="text-sm text-muted-foreground">Download the complete conceptual design specifications</p>
+                </div>
+                <a href="/APS112-Design-Specifications.pdf" download>
+                  <Button className="gap-2">
+                    <Download className="w-4 h-4" />
+                    Download PDF
+                  </Button>
+                </a>
+              </div>
             </div>
 
             {/* Key Contributions */}
