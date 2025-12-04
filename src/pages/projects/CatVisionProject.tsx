@@ -92,19 +92,27 @@ const CatVisionProject = () => {
             <div className="prose prose-lg max-w-none mb-16">
               <h2 className="text-3xl font-bold text-primary mb-6 flex items-center gap-3">
                 <Cat className="w-8 h-8 text-accent" />
-                Development Journey
+                The Story
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                Cat Vision began as a curiosity-driven idea and evolved into a functional product 
-                that integrates hardware, software, and user-focused design. The project involved 
-                identifying a specific user need, prototyping a solution, iterating based on real 
-                use, and communicating the project publicly.
+                Cat Vision was born from a real problem at home. My family had been dealing with 
+                stray cats invading our lawn and destroying outdoor furniture—a frustrating issue 
+                with no clear solution. My dad tasked me with finding a way to address it, and 
+                I saw it as an opportunity to apply my technical skills to a meaningful, personal challenge.
               </p>
               <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                Working independently allowed me to build both the technical system and the 
-                surrounding narrative—critical skills for entrepreneurship and product development. 
-                The system uses computer vision algorithms to detect and track pets in real-time, 
-                providing owners with valuable insights into their pets' behavior patterns.
+                I built Cat Vision to analyze cat appearances by employing a computer vision model 
+                using <span className="text-foreground font-medium">PyTorch</span> and <span className="text-foreground font-medium">OpenCV</span>, 
+                integrated with our home security camera feed. The system detects and tracks cats 
+                in real-time, allowing me to compile detection data and identify patterns in when 
+                the strays would appear. With this predictive insight, we could take appropriate 
+                measures—adjusting schedules, deploying deterrents—to effectively solve the problem.
+              </p>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-6">
+                Working independently on this project allowed me to build both the technical system 
+                and the surrounding narrative—critical skills for entrepreneurship and product development. 
+                What started as a family challenge evolved into a functional product that integrates 
+                hardware, software, and user-focused design.
               </p>
             </div>
 
@@ -137,7 +145,7 @@ const CatVisionProject = () => {
             <div className="mb-16">
               <h3 className="text-xl font-semibold text-primary mb-4">Technologies & Tools</h3>
               <div className="flex flex-wrap gap-2">
-                {["Python", "Computer Vision", "OpenCV", "Machine Learning", "Hardware Integration", "UI/UX Design", "Git"].map((tech) => (
+                {["Python", "PyTorch", "OpenCV", "Computer Vision", "Machine Learning", "Data Analysis", "Hardware Integration", "Git"].map((tech) => (
                   <Badge key={tech} variant="secondary" className="text-sm px-4 py-2">
                     {tech}
                   </Badge>
