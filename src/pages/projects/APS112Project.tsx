@@ -82,7 +82,7 @@ const APS112Project = () => {
                 in user-centered product design within healthcare contexts.
               </p>
               <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                Our final concept—the Smart-Slumber PJs—features wearable sensor boxes integrated into 
+                Our final concept, the Smart-Slumber PJs, features wearable sensor boxes integrated into 
                 pajamas that measure heart rate, oxygen levels, body temperature, and movement. The design 
                 prioritized accessibility, accuracy (≥95% compared to clinical devices), and affordability 
                 (under $68 CAD) for the target demographic.

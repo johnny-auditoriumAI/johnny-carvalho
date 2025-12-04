@@ -130,7 +130,7 @@ const MIE243Project = () => {
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg mb-6">
                 For this project, my team developed a long-reach robotic camera arm capable of producing smooth, 
-                repeatable motion for sports-focused filming. I contributed across the mechanical design process—from 
+                repeatable motion for sports-focused filming. I contributed across the mechanical design process, from 
                 early research and specification development to CAD modelling and gearbox design. This experience 
                 strengthened my understanding of how structured engineering workflows translate into functional 
                 robotic systems, reinforcing the kind of work I hope to pursue professionally.
@@ -221,7 +221,7 @@ const MIE243Project = () => {
               <h3 className="text-xl font-semibold text-primary mb-4">Reflection</h3>
               <p className="text-muted-foreground leading-relaxed">
                 This experience strengthened my skills in collaborative engineering, conceptual 
-                design, and robotics systems—foundational skills that I aim to continue developing 
+                design, and robotics systems, foundational skills that I aim to continue developing 
                 in my career. The project demonstrated the importance of systematic design 
                 approaches and cross-disciplinary teamwork in achieving complex engineering goals.
               </p>

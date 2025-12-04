@@ -96,7 +96,7 @@ const CatVisionProject = () => {
               </h2>
               <p className="text-muted-foreground leading-relaxed text-lg mb-6">
                 Cat Vision was born from a real problem at home. My family had been dealing with 
-                stray cats invading our lawn and destroying outdoor furniture—a frustrating issue 
+                stray cats invading our lawn and destroying outdoor furniture, a frustrating issue 
                 with no clear solution. My dad tasked me with finding a way to address it, and 
                 I saw it as an opportunity to apply my technical skills to a meaningful, personal challenge.
               </p>
@@ -106,11 +106,11 @@ const CatVisionProject = () => {
                 integrated with our home security camera feed. The system detects and tracks cats 
                 in real-time, allowing me to compile detection data and identify patterns in when 
                 the strays would appear. With this predictive insight, we could take appropriate 
-                measures—adjusting schedules, deploying deterrents—to effectively solve the problem.
+                measures, adjusting schedules, deploying deterrents, to effectively solve the problem.
               </p>
               <p className="text-muted-foreground leading-relaxed text-lg mb-6">
                 Working independently on this project allowed me to build both the technical system 
-                and the surrounding narrative—critical skills for entrepreneurship and product development. 
+                and the surrounding narrative, critical skills for entrepreneurship and product development. 
                 What started as a family challenge evolved into a functional product that integrates 
                 hardware, software, and user-focused design.
               </p>
