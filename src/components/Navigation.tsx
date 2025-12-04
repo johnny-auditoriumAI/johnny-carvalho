@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -15,6 +16,9 @@ const navItems = [
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +27,15 @@ const Navigation = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    if (isHomePage) {
+      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate("/" + href);
+    }
+  };
 
   return (
     <nav 
@@ -35,7 +48,8 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           <a 
-            href="#home" 
+            href="/"
+            onClick={(e) => { e.preventDefault(); navigate("/"); }}
             className="text-xl md:text-2xl font-bold text-primary hover:text-accent transition-colors"
           >
             JC
@@ -46,7 +60,8 @@ const Navigation = () => {
             {navItems.map((item) => (
               <a
                 key={item.href}
-                href={item.href}
+                href={isHomePage ? item.href : "/" + item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="px-4 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors rounded-md hover:bg-secondary"
               >
                 {item.label}
@@ -75,9 +90,9 @@ const Navigation = () => {
               {navItems.map((item) => (
                 <a
                   key={item.href}
-                  href={item.href}
+                  href={isHomePage ? item.href : "/" + item.href}
+                  onClick={(e) => { handleNavClick(e, item.href); setIsMobileMenuOpen(false); }}
                   className="px-4 py-3 text-sm font-medium text-foreground hover:text-accent hover:bg-secondary rounded-md transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}
                 </a>
