@@ -1,4 +1,5 @@
 import { Mail, Linkedin, Github } from "lucide-react";
+import signature from "@/assets/signature.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -44,16 +45,16 @@ const Footer = () => {
 
             <div>
               <h4 className="text-lg font-semibold mb-4">Connect</h4>
-              <div className="flex gap-4">
+              <div className="flex gap-4 mb-6">
                 <a 
-                  href="mailto:johnny.campos@utoronto.ca"
+                  href="mailto:johnny.carvalho@mail.utoronto.ca"
                   className="w-10 h-10 rounded-full bg-primary-foreground/10 hover:bg-accent flex items-center justify-center transition-colors group"
                   aria-label="Email"
                 >
                   <Mail className="w-5 h-5 text-primary-foreground group-hover:text-accent-foreground" />
                 </a>
                 <a 
-                  href="https://linkedin.com/in/johnnycampos"
+                  href="https://www.linkedin.com/in/joao-de-campos-carvalho-32a269334/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-primary-foreground/10 hover:bg-accent flex items-center justify-center transition-colors group"
@@ -62,7 +63,7 @@ const Footer = () => {
                   <Linkedin className="w-5 h-5 text-primary-foreground group-hover:text-accent-foreground" />
                 </a>
                 <a 
-                  href="https://github.com/johnnycampos"
+                  href="https://github.com/johnny-carp0s"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-primary-foreground/10 hover:bg-accent flex items-center justify-center transition-colors group"
@@ -71,6 +72,11 @@ const Footer = () => {
                   <Github className="w-5 h-5 text-primary-foreground group-hover:text-accent-foreground" />
                 </a>
               </div>
+              <img 
+                src={signature} 
+                alt="Johnny Campos signature" 
+                className="h-16 w-auto brightness-0 invert opacity-70"
+              />
             </div>
           </div>
 
