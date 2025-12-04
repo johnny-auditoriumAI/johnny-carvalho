@@ -29,7 +29,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               size="lg" 
-              className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold group shadow-lg"
+              className="bg-accent text-accent-foreground hover:bg-accent/90 dark:bg-primary-foreground dark:text-primary dark:hover:bg-primary-foreground/90 font-semibold group shadow-lg"
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
             >
               View Projects
