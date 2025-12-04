@@ -1,85 +1,51 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Cog, Activity, Box, LineChart, Glasses, Cpu } from "lucide-react";
+import { Camera, Cat, Activity } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    icon: Cog,
-    title: "Planetary Gearbox Design",
-    description: "Advanced mechanical design and optimization",
+    icon: Camera,
+    title: "High-Speed Camera Robot",
+    course: "MIE243 Design Project",
+    description: "Autonomous filming robot for sports applications",
     details: [
-      "Designed a compact planetary gearbox system using SolidWorks",
-      "Performed stress analysis and optimization for torque transmission",
-      "Achieved 30% size reduction while maintaining structural integrity",
-      "Created detailed technical drawings and assembly documentation"
+      "Designed a robotic system capable of tracking fast-moving subjects",
+      "Integrated high-speed camera with precision motor control",
+      "Developed motion prediction algorithms for smooth tracking",
+      "Collaborated with multidisciplinary team on mechanical and electrical design"
     ],
-    technologies: ["SolidWorks", "FEA", "MATLAB", "Technical Drawing"],
-    impact: "Optimized design for high-torque applications"
+    technologies: ["SolidWorks", "Arduino", "Motion Control", "Mechanical Design"],
+    impact: "Innovative approach to automated sports filming"
+  },
+  {
+    icon: Cat,
+    title: "Cat Vision",
+    course: "Personal Project",
+    description: "Computer vision system for pet monitoring",
+    details: [
+      "Built a vision-based system for monitoring pet behavior",
+      "Implemented image processing and detection algorithms",
+      "Integrated hardware and software for real-time analysis",
+      "Focused on user-centered design for pet owners"
+    ],
+    technologies: ["Python", "Computer Vision", "Hardware Integration", "UI/UX"],
+    impact: "User-friendly pet monitoring solution",
+    link: "https://www.linkedin.com/in/joao-de-campos-carvalho-32a269334/details/projects/"
   },
   {
     icon: Activity,
-    title: "Sleep Tracking Wearable Sensors",
-    description: "IoT health monitoring system development",
+    title: "Smart Sleep Monitoring Device",
+    course: "APS112 Project • UHN Partnership",
+    description: "IoT health monitoring system for sleep analysis",
     details: [
-      "Developed Arduino-based wearable sensor system for sleep analysis",
-      "Integrated accelerometer and heart rate sensors for data collection",
-      "Implemented real-time data processing algorithms",
-      "Created user-friendly data visualization dashboard"
+      "Developed wearable sensor system in partnership with University Health Network",
+      "Integrated accelerometer and biometric sensors for data collection",
+      "Implemented real-time data processing for sleep pattern analysis",
+      "Designed user-friendly interface for healthcare applications"
     ],
-    technologies: ["Arduino", "C/C++", "Python", "Data Analysis"],
-    impact: "Enabled accurate sleep pattern tracking and analysis"
-  },
-  {
-    icon: Box,
-    title: "CAD Modeling Portfolio",
-    description: "Comprehensive mechanical design showcase",
-    details: [
-      "Created detailed 3D models of mechanical assemblies and components",
-      "Developed parametric designs for manufacturing optimization",
-      "Generated photorealistic renderings for presentation",
-      "Collaborated with manufacturing team for design-for-manufacturing"
-    ],
-    technologies: ["SolidWorks", "Fusion 360", "Rendering", "GD&T"],
-    impact: "Demonstrated advanced CAD proficiency and design thinking"
-  },
-  {
-    icon: LineChart,
-    title: "Python Data Analysis Suite",
-    description: "Engineering data processing and visualization",
-    details: [
-      "Built Python tools for experimental data processing and analysis",
-      "Automated data pipeline for sensor data collection",
-      "Created interactive visualizations for engineering metrics",
-      "Implemented statistical analysis for performance validation"
-    ],
-    technologies: ["Python", "NumPy", "Matplotlib", "Pandas"],
-    impact: "Streamlined data analysis workflow by 60%"
-  },
-  {
-    icon: Glasses,
-    title: "AR Helmet Interface Concept",
-    description: "Augmented reality user experience design",
-    details: [
-      "Designed user interface for AR-enhanced safety helmet",
-      "Prototyped information overlay system for industrial applications",
-      "Conducted user research and usability testing",
-      "Created interactive mockups and demonstration materials"
-    ],
-    technologies: ["UI/UX Design", "Prototyping", "Research", "CAD"],
-    impact: "Innovative approach to workplace safety enhancement"
-  },
-  {
-    icon: Cpu,
-    title: "MATLAB Control Systems",
-    description: "Engineering simulation and control algorithms",
-    details: [
-      "Developed control algorithms for mechanical systems",
-      "Simulated dynamic system behavior and response",
-      "Optimized PID controller parameters through iteration",
-      "Created comprehensive technical documentation"
-    ],
-    technologies: ["MATLAB", "Simulink", "Control Theory", "Analysis"],
-    impact: "Improved system stability and response time"
+    technologies: ["Arduino", "Sensors", "Data Analysis", "Healthcare Tech"],
+    impact: "Enabled accurate sleep pattern tracking for clinical use"
   },
 ];
 
@@ -103,6 +69,9 @@ const Projects = () => {
               <CardHeader>
                 <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
                   <project.icon className="w-6 h-6 text-accent" />
+                </div>
+                <div className="mb-2">
+                  <Badge variant="outline" className="text-xs mb-2">{project.course}</Badge>
                 </div>
                 <CardTitle className="text-xl mb-2">{project.title}</CardTitle>
                 <CardDescription className="text-base">{project.description}</CardDescription>
@@ -128,10 +97,17 @@ const Projects = () => {
                   </div>
                 </div>
                 
-                <div className="pt-2">
+                <div className="pt-2 flex items-center justify-between">
                   <p className="text-sm font-medium text-accent">
                     ✓ {project.impact}
                   </p>
+                  {project.link && (
+                    <Button variant="ghost" size="sm" asChild>
+                      <a href={project.link} target="_blank" rel="noopener noreferrer">
+                        View →
+                      </a>
+                    </Button>
+                  )}
                 </div>
               </CardContent>
             </Card>
