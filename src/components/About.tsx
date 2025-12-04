@@ -31,20 +31,6 @@ const About = () => {
               engineering problems, collaboration, and innovation.
             </p>
 
-            <div className="pt-4 flex flex-wrap gap-3">
-              <span className="px-4 py-2 bg-accent/10 text-accent-foreground rounded-full text-sm font-medium border border-accent/20">
-                Leadership
-              </span>
-              <span className="px-4 py-2 bg-accent/10 text-accent-foreground rounded-full text-sm font-medium border border-accent/20">
-                Teamwork
-              </span>
-              <span className="px-4 py-2 bg-accent/10 text-accent-foreground rounded-full text-sm font-medium border border-accent/20">
-                Systems Thinking
-              </span>
-              <span className="px-4 py-2 bg-accent/10 text-accent-foreground rounded-full text-sm font-medium border border-accent/20">
-                Innovation
-              </span>
-            </div>
           </div>
           
           <div className="order-1 md:order-2">
