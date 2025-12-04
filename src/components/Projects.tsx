@@ -1,51 +1,54 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Camera, Cat, Activity } from "lucide-react";
+import { Camera, Cat, Activity, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const projects = [
   {
     icon: Camera,
     title: "High-Speed Camera Robot",
     course: "MIE243 Design Project",
-    description: "Autonomous filming robot for sports applications",
+    description: "Multi-axis robotic camera arm for dynamic sports cinematography",
     details: [
-      "Designed a robotic system capable of tracking fast-moving subjects",
-      "Integrated high-speed camera with precision motor control",
-      "Developed motion prediction algorithms for smooth tracking",
-      "Collaborated with multidisciplinary team on mechanical and electrical design"
+      "Designed long-reach robotic arm for smooth, repeatable motion",
+      "Custom planetary gearbox design for joint-specific requirements",
+      "Torque and motion analysis for optimal performance",
+      "Hexapod base integration with stepper-motor-driven joints"
     ],
-    technologies: ["SolidWorks", "Arduino", "Motion Control", "Mechanical Design"],
-    impact: "Innovative approach to automated sports filming"
+    technologies: ["SolidWorks", "Motion Control", "Gear Systems", "Mechanical Design"],
+    impact: "Robotics-focused engineering workflow",
+    route: "/projects/mie243"
   },
   {
     icon: Cat,
     title: "Cat Vision",
     course: "Personal Project",
-    description: "Computer vision system for pet monitoring",
+    description: "Computer vision system for pet monitoring and behavior tracking",
     details: [
-      "Built a vision-based system for monitoring pet behavior",
-      "Implemented image processing and detection algorithms",
-      "Integrated hardware and software for real-time analysis",
-      "Focused on user-centered design for pet owners"
+      "Real-time pet detection using computer vision algorithms",
+      "Hardware-software integration for practical deployment",
+      "User-centered design approach for pet owners",
+      "Independent project from concept to public presentation"
     ],
-    technologies: ["Python", "Computer Vision", "Hardware Integration", "UI/UX"],
-    impact: "User-friendly pet monitoring solution",
-    link: "https://www.linkedin.com/in/joao-de-campos-carvalho-32a269334/details/projects/"
+    technologies: ["Python", "Computer Vision", "OpenCV", "UI/UX"],
+    impact: "Entrepreneurial product development",
+    route: "/projects/cat-vision"
   },
   {
     icon: Activity,
     title: "Smart Sleep Monitoring Device",
     course: "APS112 Project • UHN Partnership",
-    description: "IoT health monitoring system for sleep analysis",
+    description: "Healthcare sleep monitoring system for retired adults",
     details: [
-      "Developed wearable sensor system in partnership with University Health Network",
-      "Integrated accelerometer and biometric sensors for data collection",
-      "Implemented real-time data processing for sleep pattern analysis",
-      "Designed user-friendly interface for healthcare applications"
+      "Partnership with University Health Network (UHN)",
+      "Functional requirements and stakeholder analysis",
+      "Wearable and mat-integrated monitoring concept",
+      "User-centered design for accessibility and ease of use"
     ],
     technologies: ["Arduino", "Sensors", "Data Analysis", "Healthcare Tech"],
-    impact: "Enabled accurate sleep pattern tracking for clinical use"
+    impact: "Real-world healthcare design experience",
+    route: "/projects/aps112"
   },
 ];
 
@@ -101,13 +104,12 @@ const Projects = () => {
                   <p className="text-sm font-medium text-accent">
                     ✓ {project.impact}
                   </p>
-                  {project.link && (
-                    <Button variant="ghost" size="sm" asChild>
-                      <a href={project.link} target="_blank" rel="noopener noreferrer">
-                        View →
-                      </a>
-                    </Button>
-                  )}
+                  <Button variant="ghost" size="sm" asChild>
+                    <Link to={project.route} className="inline-flex items-center gap-1">
+                      Learn More
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </Button>
                 </div>
               </CardContent>
             </Card>
