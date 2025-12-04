@@ -1,56 +1,73 @@
-import { Briefcase, GraduationCap } from "lucide-react";
+import { Briefcase, GraduationCap, Award, Bot } from "lucide-react";
 
 const experiences = [
   {
     type: "education",
-    title: "Engineering Student",
+    title: "BASc, Mechanical Engineering + PEY Co-op",
     organization: "University of Toronto",
-    period: "2021 - Present",
-    description: "Pursuing engineering degree with focus on mechanical design and systems",
+    period: "Sep. 2024 – May 2028",
+    description: "Double Minor in Business and Robotics & Mechatronics",
     highlights: [
-      "Maintained strong academic performance in core engineering courses",
-      "Engaged in hands-on lab work and design projects",
-      "Active participant in engineering student community",
-      "Developed proficiency in CAD, programming, and analysis tools"
+      "Maintaining 3.48 GPA",
+      "Focus on mechanical design, robotics, and product development",
+      "Active participant in engineering design teams and competitions"
     ]
   },
   {
     type: "work",
-    title: "Design Team Member",
-    organization: "UofT Engineering Design Team",
-    period: "2022 - Present",
-    description: "Collaborative engineering project development and competition participation",
+    title: "Director of Outreach",
+    organization: "UTESCA, Toronto",
+    period: "September 2025 – Present",
+    description: "Leading partnership development for U of T Engineering's consulting association",
     highlights: [
-      "Contributed to mechanical subsystem design and optimization",
-      "Collaborated with multidisciplinary team on complex projects",
-      "Utilized CAD software for component design and assembly",
-      "Participated in design reviews and iterative improvement processes"
+      "Researched and identified potential partners in prestigious consulting firms with 80% conversion rate",
+      "Developed automation pipeline to optimize partner outreach, resulting in 20+ partners registered"
+    ]
+  },
+  {
+    type: "research",
+    title: "Co-Author, Materials Science Research",
+    organization: "Department of Materials Science, U of T",
+    period: "May – Jul. 2025",
+    description: "Published research on 4D printing and smart materials for energy storage",
+    highlights: [
+      "Published paper with 20+ applications of 4D printing for Li-Ion batteries and supercapacitors",
+      "Conducted business strategy analysis and Life Cycle Assessment from 350+ sources",
+      "Awarded People's Choice Award at U of T Undergraduate Engineering Research Day"
     ]
   },
   {
     type: "work",
-    title: "Research Assistant",
-    organization: "Engineering Research Lab - University of Toronto",
-    period: "Summer 2023",
-    description: "Supported research initiatives in mechanical systems and data analysis",
+    title: "Intern",
+    organization: "Cacau Show, São Paulo, Brazil",
+    period: "Dec. 2021 – Jan. 2022",
+    description: "Data analysis and automation for Brazil's largest chocolate franchise",
     highlights: [
-      "Conducted experimental testing and data collection",
-      "Analyzed results using MATLAB and Python",
-      "Prepared technical reports and presentations",
-      "Collaborated with graduate students and faculty researchers"
+      "Participated in advertising and conversion data analysis, reaching 10,000+ customers",
+      "Developed Python tool to automate data organization, achieving 98% efficiency increase"
     ]
   },
   {
-    type: "work",
-    title: "Engineering Intern",
-    organization: "Technology Company",
-    period: "Summer 2022",
-    description: "Gained practical industry experience in engineering and design",
+    type: "extracurricular",
+    title: "Team Leader / Chief Engineer",
+    organization: "Brazilian Robotics Olympics",
+    period: "2021 – 2023",
+    description: "Led robotics competition team in both simulation and practical categories",
     highlights: [
-      "Assisted with CAD modeling and technical documentation",
-      "Participated in product development meetings",
-      "Conducted testing and quality assurance activities",
-      "Learned industry-standard tools and workflows"
+      "Designed and programmed C# code for simulation category, achieving top 5 final position",
+      "Manufactured custom PCB, circuitry, and victim rescue system with computer vision",
+      "Responsible for obstacle detection and path-following for practical category"
+    ]
+  },
+  {
+    type: "education",
+    title: "Eduexplora Summer Program",
+    organization: "UC Berkeley",
+    period: "Jul. 2022",
+    description: "Intensive program in Python, design thinking, and applied STEM",
+    highlights: [
+      "Applied STEM concepts to neuroscience applications",
+      "Developed leadership and design thinking skills"
     ]
   }
 ];
@@ -80,10 +97,16 @@ const Experience = () => {
                   <div className="bg-card rounded-xl p-6 md:p-8 shadow-lg border border-border hover:shadow-xl transition-all duration-300 hover:border-accent/30">
                     <div className="flex items-start gap-4 mb-4">
                       <div className={`w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 ${
-                        exp.type === 'education' ? 'bg-accent/10' : 'bg-primary/10'
+                        exp.type === 'education' ? 'bg-accent/10' : 
+                        exp.type === 'research' ? 'bg-green-500/10' :
+                        exp.type === 'extracurricular' ? 'bg-purple-500/10' : 'bg-primary/10'
                       }`}>
                         {exp.type === 'education' ? (
                           <GraduationCap className="w-6 h-6 text-accent" />
+                        ) : exp.type === 'research' ? (
+                          <Award className="w-6 h-6 text-green-600" />
+                        ) : exp.type === 'extracurricular' ? (
+                          <Bot className="w-6 h-6 text-purple-600" />
                         ) : (
                           <Briefcase className="w-6 h-6 text-primary" />
                         )}

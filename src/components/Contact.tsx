@@ -90,13 +90,19 @@ const Contact = () => {
               </a>
             </div>
 
-            <Button 
-              className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-lg"
-              size="lg"
+            <a 
+              href="/Joao_D_C_Carvalho-Resume.pdf"
+              download
+              className="w-full"
             >
-              <Download className="mr-2 h-5 w-5" />
-              Download Resume (PDF)
-            </Button>
+              <Button 
+                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground font-semibold shadow-lg"
+                size="lg"
+              >
+                <Download className="mr-2 h-5 w-5" />
+                Download Resume (PDF)
+              </Button>
+            </a>
           </div>
 
           {/* Contact Form */}
