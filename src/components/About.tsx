@@ -20,14 +20,14 @@ const About = () => {
             <p className="text-lg text-foreground leading-relaxed">
               My career ambition is to work at the intersection of <span className="font-semibold text-primary">robotics, 
               product design, and technology entrepreneurship</span>. I'm motivated by building systems that blend 
-              mechanical precision with thoughtful user experience—solutions that are technically strong and meaningful 
+              mechanical precision with thoughtful user experience, solutions that are technically strong and meaningful 
               to the people who rely on them.
             </p>
             
             <p className="text-lg text-foreground leading-relaxed">
               I'm drawn to roles where I can design mechanisms, integrate hardware and software, lead multidisciplinary 
               teams, and eventually build products within <span className="font-semibold text-primary">startup environments</span>. 
-              This portfolio reflects the early stages of that path—from designing a <span className="font-semibold text-primary">high-speed camera robot</span> that 
+              This portfolio reflects the early stages of that path, from designing a <span className="font-semibold text-primary">high-speed camera robot</span> that 
               deepened my mechanical and control systems expertise, to building <span className="font-semibold text-primary">Cat Vision</span> as a personal venture 
               blending hardware, software, and user-centered design, to collaborating on a <span className="font-semibold text-primary">smart sleep monitoring device</span> with 
               real-world healthcare constraints. Each project has shaped how I approach engineering problems and innovation.
