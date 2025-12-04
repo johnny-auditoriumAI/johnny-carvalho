@@ -59,17 +59,17 @@ const MIE243Project = () => {
 
             {/* Main Image - Hexapod Robot (Rotated 90° left) */}
             <div className="mb-12">
-              <div className="rounded-xl overflow-hidden shadow-lg border border-border bg-card">
-                <div className="flex justify-center items-center bg-muted/30 p-4">
+              <div className="rounded-xl shadow-lg border border-border bg-card">
+                <div className="flex justify-center items-center bg-muted/30 p-8 min-h-[500px]">
                   <img 
                     src={mie243Hexapod} 
                     alt="Final design CAD render of robot arm with hexapod base" 
-                    className="w-full max-w-2xl h-auto object-contain"
+                    className="max-h-[450px] w-auto object-contain"
                     style={{ transform: 'rotate(-90deg)' }}
                   />
                 </div>
-                <div className="p-4">
-                  <p className="text-sm text-muted-foreground font-medium">Final design CAD render</p>
+                <div className="p-4 border-t border-border">
+                  <p className="text-sm text-muted-foreground font-medium text-center">Final design CAD render</p>
                 </div>
               </div>
             </div>
