@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 // Import project images
 import mie243Render from "@/assets/projects/mie243-final-render.png";
-import catVisionCode from "@/assets/projects/catvision-code.jpg";
+import catVisionCode from "@/assets/projects/catvision-code-screenshot.png";
 import aps112Device from "@/assets/projects/aps112-device.png";
 import dotEnergyCard from "@/assets/projects/dot-energy-card.jpg";
 import coronaKillerThumbnail from "@/assets/projects/corona-killer-thumbnail.jpg";
@@ -134,7 +134,7 @@ const Hero = () => {
                 onMouseEnter={() => handleHover(project.title)}
                 onMouseLeave={() => handleHover(null)}
               >
-                <div className="w-full aspect-square overflow-hidden rounded-lg bg-muted/20">
+                <div className="w-full h-[20vh] overflow-hidden rounded-lg bg-muted/20">
                   <img 
                     src={project.image} 
                     alt={project.title}
