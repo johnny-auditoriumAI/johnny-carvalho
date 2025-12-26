@@ -9,6 +9,8 @@ import NotFound from "./pages/NotFound";
 import MIE243Project from "./pages/projects/MIE243Project";
 import CatVisionProject from "./pages/projects/CatVisionProject";
 import APS112Project from "./pages/projects/APS112Project";
+import DOTEnergyProject from "./pages/projects/DOTEnergyProject";
+import CoronaKillerProject from "./pages/projects/CoronaKillerProject";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +26,8 @@ const App = () => (
             <Route path="/projects/mie243" element={<MIE243Project />} />
             <Route path="/projects/cat-vision" element={<CatVisionProject />} />
             <Route path="/projects/aps112" element={<APS112Project />} />
+            <Route path="/projects/dot-energy" element={<DOTEnergyProject />} />
+            <Route path="/projects/corona-killer" element={<CoronaKillerProject />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
