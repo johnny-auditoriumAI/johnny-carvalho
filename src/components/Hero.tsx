@@ -63,8 +63,8 @@ const Hero = () => {
       {/* Main content area */}
       <div className="flex-1 container mx-auto px-4 pt-24 pb-8">
         <div className="grid lg:grid-cols-2 gap-8 h-full">
-          {/* Left side - Large name */}
-          <div className="flex items-center overflow-hidden">
+          {/* Left side - Large name with fixed height container */}
+          <div className="flex items-center overflow-hidden h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px]">
             <h1 
               className={`${getFontSizeClass()} font-bold text-primary-foreground leading-[0.9] tracking-tight whitespace-pre-line transition-all duration-300 transform ${isAnimating ? 'translate-y-4 opacity-0' : 'translate-y-0 opacity-100'}`}
             >
@@ -101,33 +101,42 @@ const Hero = () => {
       
       {/* Project cards row */}
       <div className="container mx-auto px-4 pb-8">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {projects.map((project) => (
-            <Link 
-              key={project.id}
-              to={project.route}
-              className="group relative"
-              onMouseEnter={() => handleHover(project.title)}
-              onMouseLeave={() => handleHover(null)}
-            >
-              <div className="h-[20vh] overflow-hidden rounded-lg bg-muted/20">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="mt-3 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <span className="text-primary-foreground/50 text-sm font-mono">[{project.id}]</span>
-                  <span className="text-primary-foreground/70 text-sm">{project.course}</span>
+        <div className="flex gap-4 justify-center">
+          {projects.map((project) => {
+            const isHovered = hoveredProject === project.title;
+            const hasHover = hoveredProject !== null;
+            
+            return (
+              <Link 
+                key={project.id}
+                to={project.route}
+                className={`group relative transition-all duration-500 ease-out ${
+                  hasHover && !isHovered 
+                    ? 'blur-sm scale-90 opacity-70' 
+                    : 'blur-0 scale-100 opacity-100'
+                }`}
+                onMouseEnter={() => handleHover(project.title)}
+                onMouseLeave={() => handleHover(null)}
+              >
+                <div className="h-[20vh] aspect-square overflow-hidden rounded-lg bg-muted/20">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
-                <span className="text-accent text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
-                  View Project <ArrowRight className="w-3 h-3" />
-                </span>
-              </div>
-            </Link>
-          ))}
+                <div className={`mt-3 flex items-center justify-between transition-opacity duration-300 ${hasHover && !isHovered ? 'opacity-0' : 'opacity-100'}`}>
+                  <div className="flex items-center gap-3">
+                    <span className="text-primary-foreground/50 text-sm font-mono">[{project.id}]</span>
+                    <span className="text-primary-foreground/70 text-sm">{project.course}</span>
+                  </div>
+                  <span className="text-accent text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+                    View Project <ArrowRight className="w-3 h-3" />
+                  </span>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>
