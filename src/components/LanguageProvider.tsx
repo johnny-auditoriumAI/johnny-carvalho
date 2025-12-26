@@ -119,6 +119,18 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.quickLinks": "Quick Links",
     "footer.connect": "Connect",
     "footer.copyright": "© 2025 Joao De Campos Carvalho. All rights reserved.",
+    
+    // Common project page elements
+    "common.backToProjects": "Back to Projects",
+    "common.projectOverview": "Project Overview",
+    "common.designProcess": "Design Process",
+    "common.keyContributions": "Key Contributions",
+    "common.technologiesTools": "Technologies & Tools",
+    "common.reflection": "Reflection",
+    "common.downloadPdf": "Download PDF",
+    "common.viewOnGithub": "View on GitHub",
+    "common.viewRepository": "View Repository",
+    "common.exploreCode": "Explore the Code",
   },
   pt: {
     // Navigation
@@ -230,6 +242,18 @@ const translations: Record<Language, Record<string, string>> = {
     "footer.quickLinks": "Links Rápidos",
     "footer.connect": "Conecte-se",
     "footer.copyright": "© 2025 Joao De Campos Carvalho. Todos os direitos reservados.",
+    
+    // Common project page elements
+    "common.backToProjects": "Voltar aos Projetos",
+    "common.projectOverview": "Visão Geral do Projeto",
+    "common.designProcess": "Processo de Design",
+    "common.keyContributions": "Principais Contribuições",
+    "common.technologiesTools": "Tecnologias & Ferramentas",
+    "common.reflection": "Reflexão",
+    "common.downloadPdf": "Baixar PDF",
+    "common.viewOnGithub": "Ver no GitHub",
+    "common.viewRepository": "Ver Repositório",
+    "common.exploreCode": "Explorar o Código",
   },
 };
 
