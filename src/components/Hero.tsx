@@ -114,7 +114,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="bg-primary-foreground/10 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary backdrop-blur-sm font-semibold w-fit"
+              className="bg-primary-foreground/10 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary backdrop-blur-sm font-semibold w-fit dark:bg-[#1a365d] dark:border-[#1a365d] dark:text-accent dark:hover:bg-accent dark:hover:text-[#1a365d]"
             >
               <Download className="mr-2 h-5 w-5" />
               Download Resume
