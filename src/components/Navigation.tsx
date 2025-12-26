@@ -61,7 +61,11 @@ const Navigation = () => {
                 key={item.href}
                 href={isHomePage ? item.href : "/" + item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className="px-4 py-2 text-sm font-medium text-foreground hover:text-accent transition-colors rounded-md hover:bg-secondary dark:text-[#1a365d] dark:hover:text-accent dark:font-semibold"
+                className={`px-4 py-2 text-sm font-medium transition-colors rounded-md hover:bg-secondary ${
+                  isScrolled 
+                    ? "text-foreground hover:text-accent dark:text-accent dark:hover:text-primary-foreground" 
+                    : "text-foreground hover:text-accent dark:text-[#1a365d] dark:hover:text-accent dark:font-semibold"
+                }`}
               >
                 {item.label}
               </a>
@@ -91,7 +95,11 @@ const Navigation = () => {
                   key={item.href}
                   href={isHomePage ? item.href : "/" + item.href}
                   onClick={(e) => { handleNavClick(e, item.href); setIsMobileMenuOpen(false); }}
-                  className="px-4 py-3 text-sm font-medium text-foreground hover:text-accent hover:bg-secondary rounded-md transition-colors dark:text-[#1a365d] dark:hover:text-accent dark:font-semibold"
+                  className={`px-4 py-3 text-sm font-medium hover:bg-secondary rounded-md transition-colors ${
+                    isScrolled 
+                      ? "text-foreground hover:text-accent dark:text-accent dark:hover:text-primary-foreground" 
+                      : "text-foreground hover:text-accent dark:text-[#1a365d] dark:hover:text-accent dark:font-semibold"
+                  }`}
                 >
                   {item.label}
                 </a>
