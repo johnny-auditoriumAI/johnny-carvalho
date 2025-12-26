@@ -1,65 +1,106 @@
 import { Box, Code, Wrench, Users } from "lucide-react";
-
-const skillCategories = [
-  {
-    icon: Box,
-    title: "Engineering & Design",
-    skills: [
-      "CAD (SolidWorks, Fusion 360)",
-      "Mechanical Design",
-      "Prototyping & Fabrication",
-      "Technical Drawing (GD&T)",
-      "Finite Element Analysis (FEA)",
-      "Design for Manufacturing"
-    ]
-  },
-  {
-    icon: Code,
-    title: "Programming & Software",
-    skills: [
-      "Python (NumPy, Pandas, Matplotlib)",
-      "MATLAB & Simulink",
-      "C/C++",
-      "JavaScript / TypeScript",
-      "Version Control (Git)",
-      "Basic Web Development"
-    ]
-  },
-  {
-    icon: Wrench,
-    title: "Tools & Technical",
-    skills: [
-      "Arduino & Embedded Systems",
-      "Sensors & Data Acquisition",
-      "Electronics & Circuit Design",
-      "3D Printing & Additive Manufacturing",
-      "Machine Shop Equipment",
-      "Testing & Validation"
-    ]
-  },
-  {
-    icon: Users,
-    title: "Professional Skills",
-    skills: [
-      "Leadership & Team Management",
-      "Technical Communication",
-      "Project Management",
-      "Problem Solving & Critical Thinking",
-      "Collaboration & Teamwork",
-      "Presentation & Documentation"
-    ]
-  }
-];
+import { useLanguage } from "@/components/LanguageProvider";
 
 const Skills = () => {
+  const { language } = useLanguage();
+
+  const skillCategories = [
+    {
+      icon: Box,
+      title: language === "pt" ? "Engenharia & Design" : "Engineering & Design",
+      skills: language === "pt" 
+        ? [
+            "CAD (SolidWorks, Fusion 360)",
+            "Design Mecânico",
+            "Prototipagem & Fabricação",
+            "Desenho Técnico (GD&T)",
+            "Análise de Elementos Finitos (FEA)",
+            "Design para Manufatura"
+          ]
+        : [
+            "CAD (SolidWorks, Fusion 360)",
+            "Mechanical Design",
+            "Prototyping & Fabrication",
+            "Technical Drawing (GD&T)",
+            "Finite Element Analysis (FEA)",
+            "Design for Manufacturing"
+          ]
+    },
+    {
+      icon: Code,
+      title: language === "pt" ? "Programação & Software" : "Programming & Software",
+      skills: language === "pt" 
+        ? [
+            "Python (NumPy, Pandas, Matplotlib)",
+            "MATLAB & Simulink",
+            "C/C++",
+            "JavaScript / TypeScript",
+            "Controle de Versão (Git)",
+            "Desenvolvimento Web Básico"
+          ]
+        : [
+            "Python (NumPy, Pandas, Matplotlib)",
+            "MATLAB & Simulink",
+            "C/C++",
+            "JavaScript / TypeScript",
+            "Version Control (Git)",
+            "Basic Web Development"
+          ]
+    },
+    {
+      icon: Wrench,
+      title: language === "pt" ? "Ferramentas & Técnico" : "Tools & Technical",
+      skills: language === "pt" 
+        ? [
+            "Arduino & Sistemas Embarcados",
+            "Sensores & Aquisição de Dados",
+            "Eletrônica & Design de Circuitos",
+            "Impressão 3D & Manufatura Aditiva",
+            "Equipamentos de Oficina",
+            "Testes & Validação"
+          ]
+        : [
+            "Arduino & Embedded Systems",
+            "Sensors & Data Acquisition",
+            "Electronics & Circuit Design",
+            "3D Printing & Additive Manufacturing",
+            "Machine Shop Equipment",
+            "Testing & Validation"
+          ]
+    },
+    {
+      icon: Users,
+      title: language === "pt" ? "Habilidades Profissionais" : "Professional Skills",
+      skills: language === "pt" 
+        ? [
+            "Liderança & Gestão de Equipes",
+            "Comunicação Técnica",
+            "Gerenciamento de Projetos",
+            "Resolução de Problemas & Pensamento Crítico",
+            "Colaboração & Trabalho em Equipe",
+            "Apresentação & Documentação"
+          ]
+        : [
+            "Leadership & Team Management",
+            "Technical Communication",
+            "Project Management",
+            "Problem Solving & Critical Thinking",
+            "Collaboration & Teamwork",
+            "Presentation & Documentation"
+          ]
+    }
+  ];
+
   return (
     <section id="skills" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-primary">
-          Skills & Expertise
+          {language === "pt" ? "Habilidades & Especialidades" : "Skills & Expertise"}
         </h2>
         <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
-          A comprehensive toolkit for engineering innovation and problem-solving
+          {language === "pt" 
+            ? "Um kit de ferramentas abrangente para inovação em engenharia e resolução de problemas"
+            : "A comprehensive toolkit for engineering innovation and problem-solving"}
         </p>
         
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">

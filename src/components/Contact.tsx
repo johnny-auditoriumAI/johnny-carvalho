@@ -5,9 +5,11 @@ import { Mail, Linkedin, Github, Send, Download } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { useLanguage } from "@/components/LanguageProvider";
 
 const Contact = () => {
   const { toast } = useToast();
+  const { language } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -27,15 +29,19 @@ const Contact = () => {
       if (error) throw error;
 
       toast({
-        title: "Message Sent!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
+        title: language === "pt" ? "Mensagem Enviada!" : "Message Sent!",
+        description: language === "pt" 
+          ? "Obrigado por entrar em contato. Responderei em breve."
+          : "Thank you for reaching out. I'll get back to you soon.",
       });
       setFormData({ name: "", email: "", message: "" });
     } catch (error: any) {
       console.error("Error sending message:", error);
       toast({
-        title: "Error",
-        description: "Failed to send message. Please try again or email me directly.",
+        title: language === "pt" ? "Erro" : "Error",
+        description: language === "pt" 
+          ? "Falha ao enviar mensagem. Por favor, tente novamente ou me envie um e-mail diretamente."
+          : "Failed to send message. Please try again or email me directly.",
         variant: "destructive",
       });
     } finally {
@@ -47,10 +53,12 @@ const Contact = () => {
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-primary">
-          Get In Touch
+          {language === "pt" ? "Entre em Contato" : "Get In Touch"}
         </h2>
         <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
-          Interested in collaboration or have a question? Let's connect!
+          {language === "pt" 
+            ? "Interessado em colaboração ou tem uma pergunta? Vamos nos conectar!"
+            : "Interested in collaboration or have a question? Let's connect!"}
         </p>
         
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
@@ -58,11 +66,12 @@ const Contact = () => {
           <div className="space-y-8">
             <div>
               <h3 className="text-2xl font-bold text-primary mb-6">
-                Contact Information
+                {language === "pt" ? "Informações de Contato" : "Contact Information"}
               </h3>
               <p className="text-muted-foreground mb-8">
-                Feel free to reach out through any of these channels. I'm always open to 
-                discussing new opportunities, projects, or collaborations.
+                {language === "pt" 
+                  ? "Sinta-se à vontade para entrar em contato através de qualquer um desses canais. Estou sempre aberto a discutir novas oportunidades, projetos ou colaborações."
+                  : "Feel free to reach out through any of these channels. I'm always open to discussing new opportunities, projects, or collaborations."}
               </p>
             </div>
 
@@ -75,7 +84,7 @@ const Contact = () => {
                   <Mail className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <p className="font-semibold text-foreground">Email</p>
+                  <p className="font-semibold text-foreground">{language === "pt" ? "E-mail" : "Email"}</p>
                   <p className="text-sm text-muted-foreground">johnny.carvalho@mail.utoronto.ca</p>
                 </div>
               </a>
@@ -91,7 +100,9 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground">LinkedIn</p>
-                  <p className="text-sm text-muted-foreground">Connect with me professionally</p>
+                  <p className="text-sm text-muted-foreground">
+                    {language === "pt" ? "Conecte-se comigo profissionalmente" : "Connect with me professionally"}
+                  </p>
                 </div>
               </a>
 
@@ -106,7 +117,9 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-foreground">GitHub</p>
-                  <p className="text-sm text-muted-foreground">View my code and projects</p>
+                  <p className="text-sm text-muted-foreground">
+                    {language === "pt" ? "Veja meu código e projetos" : "View my code and projects"}
+                  </p>
                 </div>
               </a>
             </div>
@@ -121,7 +134,7 @@ const Contact = () => {
                 size="lg"
               >
                 <Download className="mr-2 h-5 w-5" />
-                Download Resume (PDF)
+                {language === "pt" ? "Baixar Currículo (PDF)" : "Download Resume (PDF)"}
               </Button>
             </a>
           </div>
@@ -129,17 +142,17 @@ const Contact = () => {
           {/* Contact Form */}
           <div className="bg-card rounded-xl p-8 shadow-lg border border-border">
             <h3 className="text-2xl font-bold text-primary mb-6">
-              Send a Message
+              {language === "pt" ? "Enviar uma Mensagem" : "Send a Message"}
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                  Your Name
+                  {language === "pt" ? "Seu Nome" : "Your Name"}
                 </label>
                 <Input
                   id="name"
                   type="text"
-                  placeholder="John Doe"
+                  placeholder={language === "pt" ? "João Silva" : "John Doe"}
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
@@ -149,12 +162,12 @@ const Contact = () => {
 
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                  Your Email
+                  {language === "pt" ? "Seu E-mail" : "Your Email"}
                 </label>
                 <Input
                   id="email"
                   type="email"
-                  placeholder="john@example.com"
+                  placeholder={language === "pt" ? "joao@exemplo.com" : "john@example.com"}
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
@@ -164,11 +177,11 @@ const Contact = () => {
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                  Message
+                  {language === "pt" ? "Mensagem" : "Message"}
                 </label>
                 <Textarea
                   id="message"
-                  placeholder="Your message here..."
+                  placeholder={language === "pt" ? "Sua mensagem aqui..." : "Your message here..."}
                   rows={5}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -184,7 +197,9 @@ const Contact = () => {
                 disabled={isSubmitting}
               >
                 <Send className="mr-2 h-5 w-5" />
-                {isSubmitting ? "Sending..." : "Send Message"}
+                {isSubmitting 
+                  ? (language === "pt" ? "Enviando..." : "Sending...") 
+                  : (language === "pt" ? "Enviar Mensagem" : "Send Message")}
               </Button>
             </form>
           </div>
