@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Download, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import uoftLogo from "@/assets/uoft-logo.png";
 
 // Import project images
 import mie243Render from "@/assets/projects/mie243-final-render.png";
@@ -94,9 +95,16 @@ const Hero = () => {
               <p className="text-sm font-medium text-accent uppercase tracking-widest">
                 Engineering Student
               </p>
-              <p className="text-primary-foreground/90 text-lg max-w-md">
-                University of Toronto
-              </p>
+              <div className="flex items-center gap-3 lg:flex-row-reverse">
+                <img 
+                  src={uoftLogo} 
+                  alt="University of Toronto Logo" 
+                  className="h-10 w-10 object-contain dark:invert"
+                />
+                <p className="text-primary-foreground/90 text-xl font-bold max-w-md">
+                  University of Toronto
+                </p>
+              </div>
             </div>
             
             <p className="text-primary-foreground/70 max-w-md text-base">
