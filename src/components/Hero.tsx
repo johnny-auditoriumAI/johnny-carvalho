@@ -16,8 +16,11 @@ const Hero = () => {
   const { t, language } = useLanguage();
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
-  const defaultName = language === "pt" ? "JOÃO\nCAMPOS" : "JOHNNY\nCAMPOS";
-  const [displayText, setDisplayText] = useState(defaultName);
+  
+  // Get the default name based on current language
+  const getDefaultName = () => language === "pt" ? "JOÃO\nCAMPOS" : "JOHNNY\nCAMPOS";
+  // Display text updates when not hovering a project
+  const displayText = hoveredProject ? hoveredProject.toUpperCase() : getDefaultName();
 
   const projects = [
     {
@@ -60,7 +63,6 @@ const Hero = () => {
   const handleHover = (projectTitle: string | null) => {
     setIsAnimating(true);
     setTimeout(() => {
-      setDisplayText(projectTitle ? projectTitle.toUpperCase() : defaultName);
       setIsAnimating(false);
     }, 150);
     setHoveredProject(projectTitle);
