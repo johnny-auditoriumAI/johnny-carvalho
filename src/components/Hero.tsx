@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Download, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import uoftLogo from "@/assets/uoft-logo.png";
+import { useLanguage } from "@/components/LanguageProvider";
 
 // Import project images
 import mie243Render from "@/assets/projects/mie243-final-render.png";
@@ -11,53 +12,55 @@ import aps112Device from "@/assets/projects/aps112-device.png";
 import dotEnergyCard from "@/assets/projects/dot-energy-card.jpg";
 import coronaKillerThumbnail from "@/assets/projects/corona-killer-thumbnail.jpg";
 
-const projects = [
-  {
-    id: "01",
-    title: "High-Speed Camera Robot",
-    course: "MIE243 Design Project",
-    route: "/projects/mie243",
-    image: mie243Render,
-  },
-  {
-    id: "02",
-    title: "Cat Vision",
-    course: "Personal Project",
-    route: "/projects/cat-vision",
-    image: catVisionCode,
-  },
-  {
-    id: "03",
-    title: "Smart Sleep Monitor",
-    course: "APS112 • UHN Partnership",
-    route: "/projects/aps112",
-    image: aps112Device,
-  },
-  {
-    id: "04",
-    title: "DOT Energy Analysis",
-    course: "JRE410 • Industry Analysis",
-    route: "/projects/dot-energy",
-    image: dotEnergyCard,
-  },
-  {
-    id: "05",
-    title: "Corona Killer",
-    course: "Personal Project • Arduino",
-    route: "/projects/corona-killer",
-    image: coronaKillerThumbnail,
-  },
-];
-
 const Hero = () => {
+  const { t, language } = useLanguage();
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
-  const [displayText, setDisplayText] = useState("JOHNNY\nCAMPOS");
+  const defaultName = language === "pt" ? "JOÃO\nCAMPOS" : "JOHNNY\nCAMPOS";
+  const [displayText, setDisplayText] = useState(defaultName);
+
+  const projects = [
+    {
+      id: "01",
+      title: t("project.mie243.title"),
+      course: t("project.mie243.course"),
+      route: "/projects/mie243",
+      image: mie243Render,
+    },
+    {
+      id: "02",
+      title: t("project.catvision.title"),
+      course: t("project.catvision.course"),
+      route: "/projects/cat-vision",
+      image: catVisionCode,
+    },
+    {
+      id: "03",
+      title: t("project.aps112.title"),
+      course: t("project.aps112.course"),
+      route: "/projects/aps112",
+      image: aps112Device,
+    },
+    {
+      id: "04",
+      title: t("project.dotenergy.title"),
+      course: t("project.dotenergy.course"),
+      route: "/projects/dot-energy",
+      image: dotEnergyCard,
+    },
+    {
+      id: "05",
+      title: t("project.coronakiller.title"),
+      course: t("project.coronakiller.course"),
+      route: "/projects/corona-killer",
+      image: coronaKillerThumbnail,
+    },
+  ];
   
   const handleHover = (projectTitle: string | null) => {
     setIsAnimating(true);
     setTimeout(() => {
-      setDisplayText(projectTitle ? projectTitle.toUpperCase() : "JOHNNY\nCAMPOS");
+      setDisplayText(projectTitle ? projectTitle.toUpperCase() : defaultName);
       setIsAnimating(false);
     }, 150);
     setHoveredProject(projectTitle);
@@ -93,7 +96,7 @@ const Hero = () => {
           <div className="flex flex-col justify-center lg:items-end lg:text-right space-y-6">
             <div className="space-y-2">
               <p className="text-sm font-medium text-accent uppercase tracking-widest">
-                Engineering Student
+                {t("hero.title")}
               </p>
               <div className="flex items-center gap-3 lg:flex-row-reverse">
                 <img 
@@ -102,23 +105,25 @@ const Hero = () => {
                   className="h-10 w-10 object-contain dark:invert"
                 />
                 <p className="text-primary-foreground/90 text-xl font-bold max-w-md">
-                  University of Toronto
+                  {t("hero.university")}
                 </p>
               </div>
             </div>
             
             <p className="text-primary-foreground/70 max-w-md text-base">
-              Focused on engineering design, technology innovation, and data-driven problem solving
+              {t("hero.description")}
             </p>
             
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="bg-primary-foreground/10 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary backdrop-blur-sm font-semibold w-fit dark:bg-[#1a365d] dark:border-[#1a365d] dark:text-accent dark:hover:bg-accent dark:hover:text-[#1a365d]"
-            >
-              <Download className="mr-2 h-5 w-5" />
-              Download Resume
-            </Button>
+            <a href="/Joao_D_C_Carvalho-Resume.pdf" download>
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="bg-primary-foreground/10 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary backdrop-blur-sm font-semibold w-fit dark:bg-[#1a365d] dark:border-[#1a365d] dark:text-accent dark:hover:bg-accent dark:hover:text-[#1a365d]"
+              >
+                <Download className="mr-2 h-5 w-5" />
+                {t("hero.download")}
+              </Button>
+            </a>
           </div>
         </div>
       </div>
@@ -155,7 +160,7 @@ const Hero = () => {
                     <span className="text-primary-foreground/70 text-xs truncate">{project.course}</span>
                   </div>
                   <span className="text-accent text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
-                    View <ArrowRight className="w-3 h-3" />
+                    {t("hero.view")} <ArrowRight className="w-3 h-3" />
                   </span>
                 </div>
               </Link>
