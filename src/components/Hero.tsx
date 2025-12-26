@@ -34,8 +34,26 @@ const projects = [
 
 const Hero = () => {
   const [hoveredProject, setHoveredProject] = useState<string | null>(null);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [displayText, setDisplayText] = useState("JOHNNY\nCAMPOS");
   
-  const displayName = hoveredProject || "JOHNNY\nCAMPOS";
+  const handleHover = (projectTitle: string | null) => {
+    setIsAnimating(true);
+    setTimeout(() => {
+      setDisplayText(projectTitle ? projectTitle.toUpperCase() : "JOHNNY\nCAMPOS");
+      setIsAnimating(false);
+    }, 150);
+    setHoveredProject(projectTitle);
+  };
+
+  // Determine font size based on text length
+  const getFontSizeClass = () => {
+    if (!hoveredProject) return "text-6xl sm:text-7xl md:text-8xl lg:text-9xl";
+    const length = hoveredProject.length;
+    if (length > 20) return "text-4xl sm:text-5xl md:text-6xl lg:text-7xl";
+    if (length > 15) return "text-5xl sm:text-6xl md:text-7xl lg:text-8xl";
+    return "text-6xl sm:text-7xl md:text-8xl lg:text-9xl";
+  };
 
   return (
     <section 
@@ -46,9 +64,11 @@ const Hero = () => {
       <div className="flex-1 container mx-auto px-4 pt-24 pb-8">
         <div className="grid lg:grid-cols-2 gap-8 h-full">
           {/* Left side - Large name */}
-          <div className="flex items-center">
-            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-primary-foreground leading-[0.9] tracking-tight whitespace-pre-line transition-all duration-300">
-              {displayName}
+          <div className="flex items-center overflow-hidden">
+            <h1 
+              className={`${getFontSizeClass()} font-bold text-primary-foreground leading-[0.9] tracking-tight whitespace-pre-line transition-all duration-300 transform ${isAnimating ? 'translate-y-4 opacity-0' : 'translate-y-0 opacity-100'}`}
+            >
+              {displayText}
             </h1>
           </div>
           
@@ -87,10 +107,10 @@ const Hero = () => {
               key={project.id}
               to={project.route}
               className="group relative"
-              onMouseEnter={() => setHoveredProject(project.title.toUpperCase())}
-              onMouseLeave={() => setHoveredProject(null)}
+              onMouseEnter={() => handleHover(project.title)}
+              onMouseLeave={() => handleHover(null)}
             >
-              <div className="aspect-[4/3] overflow-hidden rounded-lg bg-muted/20">
+              <div className="h-[20vh] overflow-hidden rounded-lg bg-muted/20">
                 <img 
                   src={project.image} 
                   alt={project.title}
