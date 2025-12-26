@@ -73,13 +73,13 @@ const Navigation = () => {
                 {item.label}
               </a>
             ))}
-            <LanguageToggle />
+            <LanguageToggle isScrolled={isScrolled} />
             <ThemeToggle />
           </div>
 
           {/* Mobile Menu Button */}
           <div className="flex items-center gap-2 md:hidden">
-            <LanguageToggle />
+            <LanguageToggle isScrolled={isScrolled} />
             <ThemeToggle />
             <Button
               variant="ghost"
