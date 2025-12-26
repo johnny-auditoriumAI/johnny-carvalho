@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-2xl font-bold mb-4">Johnny Campos</h3>
+              <h3 className="text-2xl font-bold mb-4">Joao De Campos Carvalho</h3>
               <p className="text-primary-foreground/80">
                 Engineering Student at the University of Toronto, passionate about 
                 innovation and technical excellence.
@@ -75,7 +75,7 @@ const Footer = () => {
           </div>
 
           <div className="pt-8 border-t border-primary-foreground/20 text-center text-primary-foreground/60">
-            <p>© {currentYear} Johnny Campos. All rights reserved.</p>
+            <p>© 2025 Joao De Campos Carvalho. All rights reserved.</p>
           </div>
         </div>
       </div>
