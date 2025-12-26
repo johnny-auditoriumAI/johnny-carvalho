@@ -4,9 +4,28 @@ import { z } from "https://deno.land/x/zod@v3.22.4/mod.ts";
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
-const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+// Allowed origins for CORS
+const allowedOrigins = [
+  "https://joao-carvalho-portfolio.lovable.app",
+  "http://localhost:8080",
+  "http://localhost:8081",
+  "http://localhost:5173",
+];
+
+// Check if origin matches allowed patterns (including Lovable preview domains)
+const isAllowedOrigin = (origin: string): boolean => {
+  if (allowedOrigins.includes(origin)) return true;
+  // Allow all Lovable preview domains
+  if (origin.match(/^https:\/\/[a-z0-9-]+\.lovable\.app$/)) return true;
+  return false;
+};
+
+const getCorsHeaders = (origin: string | null) => {
+  const allowedOrigin = origin && isAllowedOrigin(origin) ? origin : allowedOrigins[0];
+  return {
+    "Access-Control-Allow-Origin": allowedOrigin,
+    "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
+  };
 };
 
 // Input validation schema
@@ -17,6 +36,9 @@ const contactSchema = z.object({
 });
 
 const handler = async (req: Request): Promise<Response> => {
+  const origin = req.headers.get("origin");
+  const corsHeaders = getCorsHeaders(origin);
+  
   // Handle CORS preflight requests
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
