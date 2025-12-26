@@ -4,8 +4,8 @@ import { Download, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 // Import project images
-import mie243Robot from "@/assets/projects/mie243-robot.png";
-import catVisionDetection from "@/assets/projects/catvision-detection1.png";
+import mie243Render from "@/assets/projects/mie243-final-render.png";
+import catVisionCode from "@/assets/projects/catvision-code.jpg";
 import aps112Device from "@/assets/projects/aps112-device.png";
 import dotEnergyCard from "@/assets/projects/dot-energy-card.jpg";
 import coronaKillerThumbnail from "@/assets/projects/corona-killer-thumbnail.jpg";
@@ -16,14 +16,14 @@ const projects = [
     title: "High-Speed Camera Robot",
     course: "MIE243 Design Project",
     route: "/projects/mie243",
-    image: mie243Robot,
+    image: mie243Render,
   },
   {
     id: "02",
     title: "Cat Vision",
     course: "Personal Project",
     route: "/projects/cat-vision",
-    image: catVisionDetection,
+    image: catVisionCode,
   },
   {
     id: "03",
@@ -117,7 +117,7 @@ const Hero = () => {
       
       {/* Project cards row */}
       <div className="container mx-auto px-4 pb-8">
-        <div className="flex gap-4 justify-center">
+        <div className="grid grid-cols-5 gap-4 w-full">
           {projects.map((project) => {
             const isHovered = hoveredProject === project.title;
             const hasHover = hoveredProject !== null;
@@ -134,7 +134,7 @@ const Hero = () => {
                 onMouseEnter={() => handleHover(project.title)}
                 onMouseLeave={() => handleHover(null)}
               >
-                <div className="h-[20vh] aspect-square overflow-hidden rounded-lg bg-muted/20">
+                <div className="w-full aspect-square overflow-hidden rounded-lg bg-muted/20">
                   <img 
                     src={project.image} 
                     alt={project.title}
@@ -142,12 +142,12 @@ const Hero = () => {
                   />
                 </div>
                 <div className={`mt-3 flex items-center justify-between transition-opacity duration-300 ${hasHover && !isHovered ? 'opacity-0' : 'opacity-100'}`}>
-                  <div className="flex items-center gap-3">
-                    <span className="text-primary-foreground/50 text-sm font-mono">[{project.id}]</span>
-                    <span className="text-primary-foreground/70 text-sm">{project.course}</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-primary-foreground/50 text-xs font-mono">[{project.id}]</span>
+                    <span className="text-primary-foreground/70 text-xs truncate">{project.course}</span>
                   </div>
-                  <span className="text-accent text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
-                    View Project <ArrowRight className="w-3 h-3" />
+                  <span className="text-accent text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+                    View <ArrowRight className="w-3 h-3" />
                   </span>
                 </div>
               </Link>
