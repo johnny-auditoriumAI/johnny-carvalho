@@ -149,6 +149,8 @@ const Experience = () => {
   );
 };
 
+const TOTAL_CARDS = 6;
+
 const ExperienceCard = ({ exp, index }: { exp: { type: string; title: string; organization: string; period: string; description: string; highlights: string[] }; index: number }) => {
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -168,6 +170,11 @@ const ExperienceCard = ({ exp, index }: { exp: { type: string; title: string; or
     return () => observer.disconnect();
   }, []);
 
+  // Reverse delay order for exit animation (last cards disappear first)
+  const enterDelay = index * 100;
+  const exitDelay = (TOTAL_CARDS - 1 - index) * 100;
+  const currentDelay = isVisible ? enterDelay : exitDelay;
+
   return (
     <div 
       ref={cardRef}
@@ -176,12 +183,12 @@ const ExperienceCard = ({ exp, index }: { exp: { type: string; title: string; or
           ? 'opacity-100 translate-y-0' 
           : 'opacity-0 translate-y-12'
       }`}
-      style={{ transitionDelay: `${index * 100}ms` }}
+      style={{ transitionDelay: `${currentDelay}ms` }}
     >
       {/* Timeline dot */}
       <div className={`absolute left-6 top-6 w-4 h-4 rounded-full bg-accent border-4 border-background hidden md:block transition-all duration-500 ${
         isVisible ? 'scale-100' : 'scale-0'
-      }`} style={{ transitionDelay: `${index * 100 + 200}ms` }} />
+      }`} style={{ transitionDelay: `${currentDelay + 200}ms` }} />
       
       <div className="bg-card rounded-xl p-6 md:p-8 shadow-lg border border-border hover:shadow-xl transition-all duration-300 hover:border-accent/30">
         <div className="flex items-start gap-4 mb-4">
