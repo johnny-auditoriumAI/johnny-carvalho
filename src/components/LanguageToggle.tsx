@@ -11,20 +11,15 @@ export function LanguageToggle({ isScrolled = false }: LanguageToggleProps) {
     setLanguage(language === "en" ? "pt" : "en");
   };
 
-  // Colors based on scroll state (in dark mode)
-  // Not scrolled: navy blue background, yellow text
-  // Scrolled: yellow background, navy blue text
+  // Background: navy blue when not scrolled, yellow when scrolled
   const bgColor = isScrolled 
     ? "bg-accent dark:bg-accent" 
     : "bg-[#1a365d] dark:bg-[#1a365d]";
   
-  const activeTextColor = isScrolled 
+  // Text: yellow when not scrolled, navy blue when scrolled
+  const textColor = isScrolled 
     ? "text-[#1a365d] dark:text-[#1a365d]" 
     : "text-accent dark:text-accent";
-  
-  const inactiveTextColor = isScrolled 
-    ? "text-[#1a365d]/50 dark:text-[#1a365d]/50" 
-    : "text-accent/50 dark:text-accent/50";
 
   return (
     <button
@@ -34,23 +29,23 @@ export function LanguageToggle({ isScrolled = false }: LanguageToggleProps) {
     >
       {/* Labels */}
       <span 
-        className={`absolute left-2 text-[10px] font-bold transition-opacity duration-300 ${
-          language === "en" ? `opacity-100 ${activeTextColor}` : `opacity-50 ${inactiveTextColor}`
+        className={`absolute left-2.5 text-[10px] font-bold transition-all duration-300 ${textColor} ${
+          language === "en" ? "opacity-100" : "opacity-40"
         }`}
       >
         EN
       </span>
       <span 
-        className={`absolute right-2 text-[10px] font-bold transition-opacity duration-300 ${
-          language === "pt" ? `opacity-100 ${activeTextColor}` : `opacity-50 ${inactiveTextColor}`
+        className={`absolute right-2.5 text-[10px] font-bold transition-all duration-300 ${textColor} ${
+          language === "pt" ? "opacity-100" : "opacity-40"
         }`}
       >
         PT
       </span>
       
-      {/* Sliding thumb */}
+      {/* Sliding thumb - circular */}
       <span
-        className={`absolute h-6 w-6 rounded-sm bg-white shadow-md transition-all duration-300 ${
+        className={`absolute h-6 w-6 rounded-full bg-white shadow-md transition-all duration-300 ${
           language === "en" ? "left-1" : "left-[calc(100%-28px)]"
         }`}
       />
