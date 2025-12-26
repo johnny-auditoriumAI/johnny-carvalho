@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import mie243Robot from "@/assets/projects/mie243-robot.png";
 import catVisionDetection from "@/assets/projects/catvision-detection1.png";
 import aps112Device from "@/assets/projects/aps112-device.png";
+import dotEnergyCard from "@/assets/projects/dot-energy-card.jpg";
+import coronaKillerThumbnail from "@/assets/projects/corona-killer-thumbnail.jpg";
 
 const projects = [
   {
@@ -29,6 +31,20 @@ const projects = [
     course: "APS112 • UHN Partnership",
     route: "/projects/aps112",
     image: aps112Device,
+  },
+  {
+    id: "04",
+    title: "DOT Energy Analysis",
+    course: "JRE410 • Industry Analysis",
+    route: "/projects/dot-energy",
+    image: dotEnergyCard,
+  },
+  {
+    id: "05",
+    title: "Corona Killer",
+    course: "Personal Project • Arduino",
+    route: "/projects/corona-killer",
+    image: coronaKillerThumbnail,
   },
 ];
 
