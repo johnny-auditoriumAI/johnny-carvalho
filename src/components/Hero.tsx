@@ -1,44 +1,76 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Download } from "lucide-react";
-import heroBackground from "@/assets/hero-background.jpg";
+import { Download, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+
+// Import project images
+import mie243Robot from "@/assets/projects/mie243-robot.png";
+import catVisionDetection from "@/assets/projects/catvision-detection1.png";
+import aps112Device from "@/assets/projects/aps112-device.png";
+
+const projects = [
+  {
+    id: "01",
+    title: "High-Speed Camera Robot",
+    course: "MIE243 Design Project",
+    route: "/projects/mie243",
+    image: mie243Robot,
+  },
+  {
+    id: "02",
+    title: "Cat Vision",
+    course: "Personal Project",
+    route: "/projects/cat-vision",
+    image: catVisionDetection,
+  },
+  {
+    id: "03",
+    title: "Smart Sleep Monitor",
+    course: "APS112 • UHN Partnership",
+    route: "/projects/aps112",
+    image: aps112Device,
+  },
+];
 
 const Hero = () => {
+  const [hoveredProject, setHoveredProject] = useState<string | null>(null);
+  
+  const displayName = hoveredProject || "JOHNNY\nCAMPOS";
+
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{
-        backgroundImage: `linear-gradient(to bottom, hsl(var(--primary) / 0.9), hsl(var(--primary) / 0.85)), url(${heroBackground})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
-      }}
+      className="min-h-screen bg-primary flex flex-col"
     >
-      <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="max-w-4xl mx-auto text-center animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 text-balance">
-            Johnny Campos
-          </h1>
-          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-4 font-medium">
-            Engineering Student at the University of Toronto
-          </p>
-          <p className="text-lg md:text-xl text-primary-foreground/80 mb-12 max-w-2xl mx-auto text-balance">
-            Focused on engineering design, technology innovation, and data-driven problem solving
-          </p>
+      {/* Main content area */}
+      <div className="flex-1 container mx-auto px-4 pt-24 pb-8">
+        <div className="grid lg:grid-cols-2 gap-8 h-full">
+          {/* Left side - Large name */}
+          <div className="flex items-center">
+            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-primary-foreground leading-[0.9] tracking-tight whitespace-pre-line transition-all duration-300">
+              {displayName}
+            </h1>
+          </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
-              className="bg-accent text-accent-foreground hover:bg-accent/90 dark:bg-primary-foreground dark:text-primary dark:hover:bg-primary-foreground/90 font-semibold group shadow-lg"
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              View Projects
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+          {/* Right side - Info */}
+          <div className="flex flex-col justify-center lg:items-end lg:text-right space-y-6">
+            <div className="space-y-2">
+              <p className="text-sm font-medium text-accent uppercase tracking-widest">
+                Engineering Student
+              </p>
+              <p className="text-primary-foreground/90 text-lg max-w-md">
+                University of Toronto
+              </p>
+            </div>
+            
+            <p className="text-primary-foreground/70 max-w-md text-base">
+              Focused on engineering design, technology innovation, and data-driven problem solving
+            </p>
+            
             <Button 
               size="lg" 
               variant="outline"
-              className="bg-primary-foreground/10 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary backdrop-blur-sm font-semibold shadow-lg"
+              className="bg-primary-foreground/10 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary backdrop-blur-sm font-semibold w-fit"
             >
               <Download className="mr-2 h-5 w-5" />
               Download Resume
@@ -47,10 +79,35 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary-foreground/50 rounded-full p-1">
-          <div className="w-1.5 h-1.5 bg-primary-foreground/50 rounded-full mx-auto animate-pulse" />
+      {/* Project cards row */}
+      <div className="container mx-auto px-4 pb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {projects.map((project) => (
+            <Link 
+              key={project.id}
+              to={project.route}
+              className="group relative"
+              onMouseEnter={() => setHoveredProject(project.title.toUpperCase())}
+              onMouseLeave={() => setHoveredProject(null)}
+            >
+              <div className="aspect-[4/3] overflow-hidden rounded-lg bg-muted/20">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="mt-3 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <span className="text-primary-foreground/50 text-sm font-mono">[{project.id}]</span>
+                  <span className="text-primary-foreground/70 text-sm">{project.course}</span>
+                </div>
+                <span className="text-accent text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+                  View Project <ArrowRight className="w-3 h-3" />
+                </span>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </section>
