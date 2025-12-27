@@ -80,7 +80,7 @@ const Hero = () => {
   return (
     <section 
       id="home" 
-      className="min-h-screen bg-accent flex flex-col"
+      className="min-h-screen bg-accent dark:bg-primary flex flex-col"
     >
       {/* Main content area */}
       <div className="flex-1 container mx-auto px-4 pt-24 pb-8">
@@ -88,7 +88,7 @@ const Hero = () => {
           {/* Left side - Large name with fixed height container */}
           <div className="flex items-center overflow-hidden h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px]">
             <h1 
-              className={`${getFontSizeClass()} font-bold text-primary leading-[0.9] tracking-tight whitespace-pre-line transition-all duration-300 transform ${isAnimating ? 'translate-y-4 opacity-0' : 'translate-y-0 opacity-100'}`}
+              className={`${getFontSizeClass()} font-bold text-primary dark:text-primary-foreground leading-[0.9] tracking-tight whitespace-pre-line transition-all duration-300 transform ${isAnimating ? 'translate-y-4 opacity-0' : 'translate-y-0 opacity-100'}`}
             >
               {displayText}
             </h1>
@@ -97,22 +97,22 @@ const Hero = () => {
           {/* Right side - Info */}
           <div className="flex flex-col justify-center lg:items-end lg:text-right space-y-6">
             <div className="space-y-2">
-              <p className="text-sm font-medium text-primary uppercase tracking-widest">
+              <p className="text-sm font-medium text-primary dark:text-accent uppercase tracking-widest">
                 {t("hero.title")}
               </p>
               <div className="flex items-center gap-3 lg:flex-row-reverse">
                 <img 
                   src={uoftLogo} 
                   alt="University of Toronto Logo" 
-                  className="h-10 w-10 object-contain"
+                  className="h-10 w-10 object-contain dark:invert"
                 />
-                <p className="text-primary/90 text-xl font-bold max-w-md">
+                <p className="text-primary/90 dark:text-primary-foreground/90 text-xl font-bold max-w-md">
                   {t("hero.university")}
                 </p>
               </div>
             </div>
             
-            <p className="text-primary/70 max-w-md text-base">
+            <p className="text-primary/70 dark:text-primary-foreground/70 max-w-md text-base">
               {t("hero.description")}
             </p>
             
@@ -120,7 +120,7 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="bg-accent-foreground border-primary text-primary hover:bg-primary hover:text-accent backdrop-blur-sm font-semibold w-fit"
+                className="bg-transparent border-primary text-primary hover:bg-primary hover:text-accent dark:border-primary-foreground dark:text-primary-foreground dark:hover:bg-primary-foreground dark:hover:text-primary backdrop-blur-sm font-semibold w-fit"
               >
                 <Download className="mr-2 h-5 w-5" />
                 {t("hero.download")}
@@ -158,10 +158,10 @@ const Hero = () => {
                 </div>
                 <div className={`mt-3 flex items-center justify-between transition-opacity duration-300 ${hasHover && !isHovered ? 'opacity-0' : 'opacity-100'}`}>
                   <div className="flex items-center gap-2">
-                    <span className="text-primary/50 text-xs font-mono">[{project.id}]</span>
-                    <span className="text-primary/70 text-xs truncate">{project.course}</span>
+                    <span className="text-primary/50 dark:text-primary-foreground/50 text-xs font-mono">[{project.id}]</span>
+                    <span className="text-primary/70 dark:text-primary-foreground/70 text-xs truncate">{project.course}</span>
                   </div>
-                  <span className="text-primary text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
+                  <span className="text-primary dark:text-accent text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
                     {t("hero.view")} <ArrowRight className="w-3 h-3" />
                   </span>
                 </div>
