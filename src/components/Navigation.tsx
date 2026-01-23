@@ -93,18 +93,14 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 animate-fade-in">
-            <div className="flex flex-col space-y-2">
+          <div className="md:hidden py-4 animate-fade-in bg-background/95 backdrop-blur-md rounded-lg mt-2 shadow-lg border border-border/50">
+            <div className="flex flex-col space-y-1 px-2">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={isHomePage ? item.href : "/" + item.href}
                   onClick={(e) => { handleNavClick(e, item.href); setIsMobileMenuOpen(false); }}
-                  className={`px-4 py-3 text-sm font-medium hover:bg-secondary rounded-md transition-colors ${
-                    isScrolled 
-                      ? "text-foreground hover:text-accent dark:text-accent dark:hover:text-primary-foreground" 
-                      : "text-foreground hover:text-accent dark:text-[#1a365d] dark:hover:text-accent dark:font-semibold"
-                  }`}
+                  className="px-4 py-3 text-base font-medium text-foreground hover:text-accent hover:bg-secondary/50 rounded-md transition-colors"
                 >
                   {item.label}
                 </a>

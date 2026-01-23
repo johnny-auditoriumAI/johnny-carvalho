@@ -33,13 +33,13 @@ const NFCWelcome = () => {
       <div className="relative w-full h-screen flex items-center justify-center">
         {/* First message: Hi, I'm Johnny */}
         <div
-          className={`absolute text-center transition-all duration-700 ease-in-out ${
+          className={`absolute text-center transition-all duration-700 ease-in-out px-4 ${
             stage === "hi"
               ? "opacity-100 translate-y-0"
               : "opacity-0 -translate-y-20"
           }`}
         >
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-[hsl(214,100%,18%)] dark:text-white">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-[hsl(214,100%,18%)] dark:text-white">
             Hi, I'm{" "}
             <span className="text-primary dark:text-accent">Johnny</span>
           </h1>
@@ -47,7 +47,7 @@ const NFCWelcome = () => {
 
         {/* Second message: Nice to meet you! */}
         <div
-          className={`absolute text-center transition-all duration-700 ease-in-out ${
+          className={`absolute text-center transition-all duration-700 ease-in-out px-4 ${
             stage === "meet"
               ? "opacity-100 translate-y-0"
               : stage === "hi"
@@ -55,10 +55,10 @@ const NFCWelcome = () => {
               : "opacity-0 -translate-y-20"
           }`}
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[hsl(214,100%,18%)] dark:text-white">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-[hsl(214,100%,18%)] dark:text-white">
             Nice to meet you!
           </h1>
-          <p className="mt-4 text-xl sm:text-2xl text-[hsl(214,100%,18%)]/70 dark:text-white/70">
+          <p className="mt-3 sm:mt-4 text-lg sm:text-xl md:text-2xl text-[hsl(214,100%,18%)]/70 dark:text-white/70">
             Welcome to my portfolio
           </p>
         </div>
