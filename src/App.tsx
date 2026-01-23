@@ -12,6 +12,7 @@ import CatVisionProject from "./pages/projects/CatVisionProject";
 import APS112Project from "./pages/projects/APS112Project";
 import DOTEnergyProject from "./pages/projects/DOTEnergyProject";
 import CoronaKillerProject from "./pages/projects/CoronaKillerProject";
+import NFCWelcome from "./pages/NFCWelcome";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Index />} />
+              <Route path="/nfc" element={<NFCWelcome />} />
               <Route path="/projects/mie243" element={<MIE243Project />} />
               <Route path="/projects/cat-vision" element={<CatVisionProject />} />
               <Route path="/projects/aps112" element={<APS112Project />} />
