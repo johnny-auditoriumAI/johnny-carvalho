@@ -14,12 +14,12 @@ const Experience = () => {
       description: language === "pt" ? "Dupla Menor em Negócios e Robótica & Mecatrônica" : "Double Minor in Business and Robotics & Mechatronics",
       highlights: language === "pt" 
         ? [
-            "Mantendo média 3.48",
+            "Mantendo média 3.57",
             "Foco em design mecânico, robótica e desenvolvimento de produtos",
             "Participante ativo em equipes de design de engenharia e competições"
           ]
         : [
-            "Maintaining 3.48 GPA",
+            "Maintaining 3.57 GPA",
             "Focus on mechanical design, robotics, and product development",
             "Active participant in engineering design teams and competitions"
           ]
