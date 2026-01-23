@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Download, ArrowRight } from "lucide-react";
+import { Download, ArrowRight, Linkedin } from "lucide-react";
 import { Link } from "react-router-dom";
 import uoftLogo from "@/assets/uoft-logo.png";
 import { useLanguage } from "@/components/LanguageProvider";
@@ -116,16 +116,32 @@ const Hero = () => {
               {t("hero.description")}
             </p>
             
-            <a href="/Joao_D_C_Carvalho-Resume.pdf" download>
-              <Button 
-                size="lg" 
-                variant="outline"
-                className="bg-transparent border-[hsl(214,100%,18%)] text-[hsl(214,100%,18%)] hover:bg-[hsl(214,100%,18%)] hover:text-accent dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-[hsl(214,100%,18%)] backdrop-blur-sm font-semibold w-fit text-sm sm:text-base"
+            <div className="flex flex-wrap gap-3 justify-center lg:justify-end">
+              <a href="/Joao_D_C_Carvalho-Resume.pdf" download>
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="bg-transparent border-[hsl(214,100%,18%)] text-[hsl(214,100%,18%)] hover:bg-[hsl(214,100%,18%)] hover:text-accent dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-[hsl(214,100%,18%)] backdrop-blur-sm font-semibold text-sm sm:text-base"
+                >
+                  <Download className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  {t("hero.download")}
+                </Button>
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/joao-de-campos-carvalho-32a269334/" 
+                target="_blank" 
+                rel="noopener noreferrer"
               >
-                <Download className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                {t("hero.download")}
-              </Button>
-            </a>
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="bg-transparent border-[hsl(214,100%,18%)] text-[hsl(214,100%,18%)] hover:bg-[hsl(214,100%,18%)] hover:text-accent dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-[hsl(214,100%,18%)] backdrop-blur-sm font-semibold text-sm sm:text-base"
+                >
+                  <Linkedin className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  LinkedIn
+                </Button>
+              </a>
+            </div>
           </div>
         </div>
       </div>
