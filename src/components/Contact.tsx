@@ -125,7 +125,7 @@ const Contact = () => {
             </div>
 
             <a 
-              href="/Joao_D_C_Carvalho-Resume.pdf"
+              href={`${import.meta.env.BASE_URL}Joao_D_C_Carvalho-Resume.pdf`}
               download
               className="w-full"
             >

@@ -237,7 +237,7 @@ const MIE243Project = () => {
                   <h3 className="text-lg font-semibold text-primary mb-1">{c.downloadTitle}</h3>
                   <p className="text-sm text-muted-foreground">{c.downloadDesc}</p>
                 </div>
-                <a href="/MIE243-Design-Specifications.pdf" download>
+                <a href={`${import.meta.env.BASE_URL}MIE243-Design-Specifications.pdf`} download>
                   <Button className="gap-2">
                     <Download className="w-4 h-4" />
                     {t("common.downloadPdf")}

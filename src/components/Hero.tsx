@@ -117,7 +117,7 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-wrap gap-3 justify-center lg:justify-end">
-              <a href="/Joao_D_C_Carvalho-Resume.pdf" download>
+              <a href={`${import.meta.env.BASE_URL}Joao_D_C_Carvalho-Resume.pdf`} download>
                 <Button 
                   size="lg" 
                   variant="outline"

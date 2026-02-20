@@ -71,7 +71,7 @@ const About = () => {
               <img 
                 alt={language === "pt" ? "João Campos" : "Johnny Campos"}
                 className="relative rounded-2xl shadow-xl w-full max-w-md mx-auto border-4 border-accent/30" 
-                src="/lovable-uploads/a2a8bdbb-ce2a-44fd-a186-cd0bad9f0735.jpg" 
+                src={`${import.meta.env.BASE_URL}lovable-uploads/a2a8bdbb-ce2a-44fd-a186-cd0bad9f0735.jpg`}
               />
             </div>
           </div>

@@ -299,7 +299,7 @@ const DOTEnergyProject = () => {
                   <h3 className="text-lg font-semibold text-primary mb-1">{c.downloadTitle}</h3>
                   <p className="text-sm text-muted-foreground">{c.downloadDesc}</p>
                 </div>
-                <a href="/Marketing_Plan_1.pdf" download>
+                <a href={`${import.meta.env.BASE_URL}Marketing_Plan_1.pdf`} download>
                   <Button className="gap-2">
                     <Download className="w-4 h-4" />
                     {t("common.downloadPdf")}
