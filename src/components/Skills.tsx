@@ -8,75 +8,75 @@ const Skills = () => {
     {
       icon: Box,
       title: language === "pt" ? "Engenharia & Design" : "Engineering & Design",
-      skills: language === "pt" 
+      skills: language === "pt"
         ? [
             "CAD (SolidWorks, Fusion 360)",
             "Design Mecânico",
-            "Prototipagem & Fabricação",
+            "Prototipagem & Impressão 3D",
             "Desenho Técnico (GD&T)",
-            "Análise de Elementos Finitos (FEA)",
+            "Design de PCB & Circuitos (EasyEDA)",
             "Design para Manufatura"
           ]
         : [
             "CAD (SolidWorks, Fusion 360)",
             "Mechanical Design",
-            "Prototyping & Fabrication",
+            "Prototyping & 3D Printing",
             "Technical Drawing (GD&T)",
-            "Finite Element Analysis (FEA)",
+            "PCB & Circuit Design (EasyEDA)",
             "Design for Manufacturing"
           ]
     },
     {
       icon: Code,
       title: language === "pt" ? "Programação & Software" : "Programming & Software",
-      skills: language === "pt" 
+      skills: language === "pt"
         ? [
-            "Python (NumPy, Pandas, Matplotlib)",
+            "Python (PyTorch, NumPy, Pandas)",
+            "TypeScript & React",
+            "C / C++ / C#",
+            "Rust",
             "MATLAB & Simulink",
-            "C/C++",
-            "JavaScript / TypeScript",
-            "Controle de Versão (Git)",
-            "Desenvolvimento Web Básico"
+            "Git & Controle de Versão"
           ]
         : [
-            "Python (NumPy, Pandas, Matplotlib)",
+            "Python (PyTorch, NumPy, Pandas)",
+            "TypeScript & React",
+            "C / C++ / C#",
+            "Rust",
             "MATLAB & Simulink",
-            "C/C++",
-            "JavaScript / TypeScript",
-            "Version Control (Git)",
-            "Basic Web Development"
+            "Git & Version Control"
           ]
     },
     {
       icon: Wrench,
       title: language === "pt" ? "Ferramentas & Técnico" : "Tools & Technical",
-      skills: language === "pt" 
+      skills: language === "pt"
         ? [
-            "Arduino & Sistemas Embarcados",
+            "Linux & Sistemas Embarcados",
+            "Single-Board Computers & Arduino",
             "Sensores & Aquisição de Dados",
-            "Eletrônica & Design de Circuitos",
-            "Impressão 3D & Manufatura Aditiva",
-            "Equipamentos de Oficina",
-            "Testes & Validação"
+            "Visão Computacional",
+            "Figma & Design Systems",
+            "Power BI & Microsoft Office"
           ]
         : [
-            "Arduino & Embedded Systems",
+            "Linux & Embedded Systems",
+            "Single-Board Computers & Arduino",
             "Sensors & Data Acquisition",
-            "Electronics & Circuit Design",
-            "3D Printing & Additive Manufacturing",
-            "Machine Shop Equipment",
-            "Testing & Validation"
+            "Computer Vision",
+            "Figma & Design Systems",
+            "Power BI & Microsoft Office"
           ]
     },
     {
       icon: Users,
       title: language === "pt" ? "Habilidades Profissionais" : "Professional Skills",
-      skills: language === "pt" 
+      skills: language === "pt"
         ? [
             "Liderança & Gestão de Equipes",
             "Comunicação Técnica",
             "Gerenciamento de Projetos",
-            "Resolução de Problemas & Pensamento Crítico",
+            "Pesquisa de Mercado & Concorrência",
             "Colaboração & Trabalho em Equipe",
             "Apresentação & Documentação"
           ]
@@ -84,7 +84,7 @@ const Skills = () => {
             "Leadership & Team Management",
             "Technical Communication",
             "Project Management",
-            "Problem Solving & Critical Thinking",
+            "Market & Competitive Research",
             "Collaboration & Teamwork",
             "Presentation & Documentation"
           ]

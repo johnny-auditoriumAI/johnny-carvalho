@@ -10,18 +10,42 @@ const Experience = () => {
       type: "education",
       title: language === "pt" ? "BASc, Engenharia Mecânica + PEY Co-op" : "BASc, Mechanical Engineering + PEY Co-op",
       organization: language === "pt" ? "Universidade de Toronto" : "University of Toronto",
-      period: language === "pt" ? "Set. 2024 – Mai. 2028" : "Sep. 2024 – May 2028",
-      description: language === "pt" ? "Dupla Menor em Negócios e Robótica & Mecatrônica" : "Double Minor in Business and Robotics & Mechatronics",
+      period: language === "pt" ? "Set. 2024 – Abr. 2029" : "Sep. 2024 – Apr. 2029",
+      description: language === "pt" ? "Minors em Robótica & Mecatrônica e Negócios de Engenharia" : "Minors in Robotics & Mechatronics and Engineering Business",
       highlights: language === "pt" 
         ? [
-            "Mantendo média 3.57",
+            "Mantendo média 3.48",
             "Foco em design mecânico, robótica e desenvolvimento de produtos",
             "Participante ativo em equipes de design de engenharia e competições"
           ]
         : [
-            "Maintaining 3.57 GPA",
+            "Maintaining 3.48 GPA",
             "Focus on mechanical design, robotics, and product development",
             "Active participant in engineering design teams and competitions"
+          ]
+    },
+    {
+      type: "work",
+      title: language === "pt" ? "Engenheiro de Design Líder" : "Lead Design Engineer",
+      organization: language === "pt" ? "Auditorium AI Inc., Toronto, Canadá" : "Auditorium AI Inc., Toronto, Canada",
+      period: language === "pt" ? "Maio 2026 – Agosto 2026" : "May 2026 – August 2026",
+      description: language === "pt"
+        ? "Engenharia de design em hardware, software e produto para uma startup de iluminação cênica automatizada"
+        : "Design engineering across hardware, software, and product for an automated stage lighting startup",
+      highlights: language === "pt"
+        ? [
+            "Desenvolvi um recurso de calibração espacial que mapeia iluminação cênica automatizada à geometria da sala, revelando dois modos de falha silenciosos que todas as verificações existentes haviam aprovado",
+            "Projetei um design system de interface unificado abrangendo tipografia, componentes, superfícies de cor e um conjunto de ícones próprio, adotado no aplicativo do operador e no site de marketing",
+            "Conduzi pesquisa independente de mercado e concorrência que redirecionou o segmento de clientes-alvo da empresa, e produzi a estratégia de canais subsequente",
+            "Escrevi um currículo de treinamento de oito módulos para operadores iniciantes em mesas de iluminação",
+            "Integrei hardware e software para um dispositivo de campo baseado em single-board computer, incluindo atualizações em campo, regras de driver de dispositivo e um invólucro impresso em 3D projetado no Fusion 360"
+          ]
+        : [
+            "Engineered a spatial-calibration feature mapping automated stage lighting to room geometry, uncovering two silent failure modes that every existing check had passed",
+            "Designed a unified interface design system covering typography, components, colour surfaces, and a custom icon set, adopted across the operator application and marketing site",
+            "Conducted independent market and competitive research that redirected the company's target customer segment, and produced the follow-up channel strategy",
+            "Authored an eight-module training curriculum for operators new to lighting consoles",
+            "Integrated hardware and software for a single-board-computer field device, including field updates, device driver rules, and a 3D-printed enclosure designed in Fusion 360"
           ]
     },
     {
@@ -149,7 +173,7 @@ const Experience = () => {
   );
 };
 
-const TOTAL_CARDS = 6;
+const TOTAL_CARDS = 7;
 
 const ExperienceCard = ({ exp, index }: { exp: { type: string; title: string; organization: string; period: string; description: string; highlights: string[] }; index: number }) => {
   const [isVisible, setIsVisible] = useState(false);
