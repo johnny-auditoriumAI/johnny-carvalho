@@ -5,6 +5,8 @@ import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/components/LanguageProvider";
+import edgeEnclosure from "@/assets/projects/auditorium-edge-enclosure.png";
+import AuditoriumMark from "@/components/AuditoriumMark";
 
 const AuditoriumAIProject = () => {
   const { language, t } = useLanguage();
@@ -31,7 +33,8 @@ const AuditoriumAIProject = () => {
       step4Title: "4. Operator Training Curriculum",
       step4Desc: "Authored an eight-module training curriculum for operators new to lighting consoles.",
       step5Title: "5. Field Device Integration",
-      step5Desc: "Integrated hardware and software for a single-board-computer field device, including field updates, device driver rules, and a 3D-printed enclosure designed in Fusion 360.",
+      step5Desc: "Integrated hardware and software for a single-board-computer field device, including field updates, device driver rules, and a 3D-printed enclosure designed in Fusion 360. The device drives a fixture library of roughly 40 DMX profiles, spanning manufacturers including Chauvet, Martin, ADJ, Antari and Prolights.",
+      enclosureCaption: "The field device: a single-board computer in a 3D-printed enclosure designed in Fusion 360, with DMX and power on the rear panel.",
       designSystemTitle: "The Design System",
       designSystemDesc: "The interface design system I built, reproduced from its shipped tokens. It runs light rather than dark: a warm paper ground with near-black ink, a single rust accent carrying emphasis and state, and Inter across the whole range with JetBrains Mono for numerics and technical labels. Motion is tokenised too, on a vocabulary borrowed from the theatre.",
       brandTitle: "Accent",
@@ -77,7 +80,8 @@ const AuditoriumAIProject = () => {
       step4Title: "4. Currículo de Treinamento",
       step4Desc: "Escrevi um currículo de treinamento de oito módulos para operadores iniciantes em mesas de iluminação.",
       step5Title: "5. Integração de Dispositivo de Campo",
-      step5Desc: "Integrei hardware e software para um dispositivo de campo baseado em single-board computer, incluindo atualizações em campo, regras de driver de dispositivo e um invólucro impresso em 3D projetado no Fusion 360.",
+      step5Desc: "Integrei hardware e software para um dispositivo de campo baseado em single-board computer, incluindo atualizações em campo, regras de driver de dispositivo e um invólucro impresso em 3D projetado no Fusion 360. O dispositivo controla uma biblioteca de cerca de 40 perfis DMX, abrangendo fabricantes como Chauvet, Martin, ADJ, Antari e Prolights.",
+      enclosureCaption: "O dispositivo de campo: um single-board computer em um invólucro impresso em 3D projetado no Fusion 360, com DMX e alimentação no painel traseiro.",
       designSystemTitle: "O Design System",
       designSystemDesc: "O design system de interface que construí, reproduzido a partir de seus tokens em produção. Ele é claro, não escuro: um fundo de papel quente com tinta quase preta, um único acento rust carregando ênfase e estado, e Inter em toda a escala, com JetBrains Mono para números e rótulos técnicos. O movimento também é tokenizado, com um vocabulário emprestado do teatro.",
       brandTitle: "Acento",
@@ -159,9 +163,13 @@ const AuditoriumAIProject = () => {
 
           <div className="max-w-4xl">
             <Badge variant="outline" className="mb-4">{c.badge}</Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4">
-              {c.title}
-            </h1>
+            <div className="flex items-center gap-4 mb-4">
+              {/* Rust is one of the three colours the brand rules permit */}
+              <AuditoriumMark className="h-10 md:h-14 w-auto flex-shrink-0 text-[#C53D23]" />
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary">
+                {c.title}
+              </h1>
+            </div>
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-6">
               <p className="text-xl md:text-2xl font-semibold text-accent">{c.role}</p>
               <span className="text-muted-foreground">·</span>
@@ -227,6 +235,24 @@ const AuditoriumAIProject = () => {
                 ))}
               </div>
             </div>
+
+            {/* Field device */}
+            <figure className="mb-16">
+              <div
+                className="rounded-xl overflow-hidden border border-border"
+                style={{ backgroundColor: PAPER }}
+              >
+                <img
+                  src={edgeEnclosure}
+                  alt={c.enclosureCaption}
+                  className="w-full h-auto object-contain"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption className="text-sm text-muted-foreground mt-3">
+                {c.enclosureCaption}
+              </figcaption>
+            </figure>
 
             {/* Design System */}
             <div className="mb-16">
