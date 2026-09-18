@@ -1,4 +1,5 @@
-import { Briefcase, GraduationCap, Award, Bot } from "lucide-react";
+import { Briefcase, GraduationCap, Award, Bot, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "@/components/LanguageProvider";
 
@@ -46,7 +47,8 @@ const Experience = () => {
             "Conducted independent market and competitive research that redirected the company's target customer segment, and produced the follow-up channel strategy",
             "Authored an eight-module training curriculum for operators new to lighting consoles",
             "Integrated hardware and software for a single-board-computer field device, including field updates, device driver rules, and a 3D-printed enclosure designed in Fusion 360"
-          ]
+          ],
+      route: "/projects/auditorium-ai"
     },
     {
       type: "work",
@@ -175,7 +177,8 @@ const Experience = () => {
 
 const TOTAL_CARDS = 7;
 
-const ExperienceCard = ({ exp, index }: { exp: { type: string; title: string; organization: string; period: string; description: string; highlights: string[] }; index: number }) => {
+const ExperienceCard = ({ exp, index }: { exp: { type: string; title: string; organization: string; period: string; description: string; highlights: string[]; route?: string }; index: number }) => {
+  const { language } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -256,6 +259,18 @@ const ExperienceCard = ({ exp, index }: { exp: { type: string; title: string; or
             </li>
           ))}
         </ul>
+
+        {exp.route && (
+          <div className="mt-6 ml-0 md:ml-16">
+            <Link
+              to={exp.route}
+              className="inline-flex items-center gap-1 text-sm font-medium text-accent hover:gap-2 transition-all"
+            >
+              {language === "pt" ? "Ler o relato completo" : "Read the full write-up"}
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
