@@ -29,12 +29,19 @@ const About = () => {
                 </p>
                 
                 <p className="text-lg text-foreground leading-relaxed">
-                  Sou atraído por funções onde posso projetar mecanismos, integrar hardware e software, liderar 
-                  equipes multidisciplinares e eventualmente construir produtos em <span className="font-semibold text-primary">ambientes de startup</span>. 
-                  Este portfólio reflete os estágios iniciais desse caminho, desde projetar um <span className="font-semibold text-primary">robô de câmera de alta velocidade</span> que 
-                  aprofundou minha expertise em sistemas mecânicos e de controle, até construir <span className="font-semibold text-primary">Cat Vision</span> como um projeto pessoal 
-                  combinando hardware, software e design centrado no usuário, até colaborar em um <span className="font-semibold text-primary">dispositivo inteligente de monitoramento de sono</span> com 
-                  restrições reais de saúde. Cada projeto moldou como abordo problemas de engenharia e inovação.
+                  Sou atraído por funções onde posso projetar mecanismos, integrar hardware e software, liderar
+                  equipes multidisciplinares e construir produtos em <span className="font-semibold text-primary">ambientes de startup</span>.
+                  Foi exatamente isso que fiz como <span className="font-semibold text-primary">Engenheiro de Design Líder na Auditorium AI</span>,
+                  onde trabalhei em um dispositivo de campo baseado em single-board computer e seu invólucro impresso em 3D, em um recurso de
+                  calibração espacial para iluminação cênica automatizada, e em um design system unificado adotado no aplicativo do operador
+                  e no site de marketing.
+                </p>
+
+                <p className="text-lg text-foreground leading-relaxed">
+                  Os projetos reunidos aqui são onde esses instintos se formaram: um <span className="font-semibold text-primary">robô de câmera de alta velocidade</span> que
+                  aprofundou minha expertise em sistemas mecânicos e de controle, o <span className="font-semibold text-primary">Cat Vision</span> como projeto pessoal
+                  combinando hardware, software e design centrado no usuário, e um <span className="font-semibold text-primary">dispositivo inteligente de monitoramento de sono</span> com
+                  restrições reais de saúde. Cada um moldou como abordo problemas de engenharia e inovação.
                 </p>
               </>
             ) : (
@@ -54,12 +61,18 @@ const About = () => {
                 </p>
                 
                 <p className="text-lg text-foreground leading-relaxed">
-                  I'm drawn to roles where I can design mechanisms, integrate hardware and software, lead multidisciplinary 
-                  teams, and eventually build products within <span className="font-semibold text-primary">startup environments</span>. 
-                  This portfolio reflects the early stages of that path, from designing a <span className="font-semibold text-primary">high-speed camera robot</span> that 
-                  deepened my mechanical and control systems expertise, to building <span className="font-semibold text-primary">Cat Vision</span> as a personal venture 
-                  blending hardware, software, and user-centered design, to collaborating on a <span className="font-semibold text-primary">smart sleep monitoring device</span> with 
-                  real-world healthcare constraints. Each project has shaped how I approach engineering problems and innovation.
+                  I'm drawn to roles where I can design mechanisms, integrate hardware and software, lead multidisciplinary
+                  teams, and build products within <span className="font-semibold text-primary">startup environments</span>.
+                  Most recently I did exactly that as <span className="font-semibold text-primary">Lead Design Engineer at Auditorium AI</span>,
+                  working across a single-board-computer field device and its 3D-printed enclosure, a spatial-calibration feature for
+                  automated stage lighting, and a unified design system adopted across the operator application and marketing site.
+                </p>
+
+                <p className="text-lg text-foreground leading-relaxed">
+                  The projects gathered here are where those instincts were formed: a <span className="font-semibold text-primary">high-speed camera robot</span> that
+                  deepened my mechanical and control systems expertise, <span className="font-semibold text-primary">Cat Vision</span> as a personal venture
+                  blending hardware, software, and user-centered design, and a <span className="font-semibold text-primary">smart sleep monitoring device</span> built
+                  against real-world healthcare constraints. Each one shaped how I approach engineering problems and innovation.
                 </p>
               </>
             )}

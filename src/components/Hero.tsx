@@ -147,7 +147,7 @@ const Hero = () => {
       </div>
       
       {/* Project cards row */}
-      <div className="container mx-auto px-4 sm:px-6 pb-6 sm:pb-8">
+      <div id="projects" className="container mx-auto px-4 sm:px-6 pb-6 sm:pb-8">
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 w-full">
           {projects.map((project) => {
             const isHovered = hoveredProject === project.title;

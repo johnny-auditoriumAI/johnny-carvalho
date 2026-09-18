@@ -40,9 +40,6 @@ const translations: Record<Language, Record<string, string>> = {
     
     // About
     "about.title": "About Me",
-    "about.p1": "I'm a third-year Engineering Science student at the University of Toronto, specializing in Robotics. My academic journey has equipped me with a strong foundation in mathematics, physics, and computational thinking.",
-    "about.p2": "I'm passionate about building things—whether it's robotics systems, software applications, or innovative product concepts. I thrive at the intersection of engineering and business, where technical solutions meet real-world market needs.",
-    "about.p3": "My goal is to pursue a career in product development, venture capital, or management consulting, where I can leverage my technical background to drive innovation and create value.",
     "about.featured": "Featured Projects:",
     "about.project1": "MIE243 Hexapod Robot - High-speed camera positioning system",
     "about.project2": "APS112 Smart Sleep Monitor - Healthcare IoT device for UHN",
@@ -57,38 +54,9 @@ const translations: Record<Language, Record<string, string>> = {
     "experience.title": "Experience & Education",
     "experience.description": "My academic journey and professional experiences that have shaped my engineering perspective.",
     
-    // Experience items
-    "exp.uoft.title": "Engineering Science",
-    "exp.uoft.org": "University of Toronto",
-    "exp.uoft.period": "2022 - Present",
-    "exp.uoft.desc": "Pursuing a degree in Engineering Science with a specialization in Robotics Engineering. Focused on advanced mathematics, physics, and computational methods.",
-    "exp.uoft.h1": "GPA: 3.5/4.0",
-    "exp.uoft.h2": "Dean's List Scholar",
-    "exp.uoft.h3": "Robotics Specialization",
     
-    "exp.research.title": "Research Assistant",
-    "exp.research.org": "University of Toronto",
-    "exp.research.period": "Summer 2024",
-    "exp.research.desc": "Contributed to research in robotics and automation, focusing on computer vision applications and machine learning algorithms.",
-    "exp.research.h1": "Computer Vision Research",
-    "exp.research.h2": "Machine Learning Applications",
-    "exp.research.h3": "Published Research Paper",
     
-    "exp.intern.title": "Engineering Intern",
-    "exp.intern.org": "Tech Company",
-    "exp.intern.period": "Summer 2023",
-    "exp.intern.desc": "Worked on product development and prototyping, gaining hands-on experience in the engineering design process.",
-    "exp.intern.h1": "Product Development",
-    "exp.intern.h2": "CAD Design & Prototyping",
-    "exp.intern.h3": "Cross-functional Team Collaboration",
     
-    "exp.club.title": "Engineering Club Lead",
-    "exp.club.org": "University of Toronto",
-    "exp.club.period": "2023 - Present",
-    "exp.club.desc": "Leading a team of engineering students in various technical projects and competitions, fostering innovation and teamwork.",
-    "exp.club.h1": "Team Leadership",
-    "exp.club.h2": "Project Management",
-    "exp.club.h3": "Competition Participation",
     
     // Skills
     "skills.title": "Skills & Expertise",
@@ -163,9 +131,6 @@ const translations: Record<Language, Record<string, string>> = {
     
     // About
     "about.title": "Sobre Mim",
-    "about.p1": "Sou estudante do terceiro ano de Ciências da Engenharia na Universidade de Toronto, com especialização em Robótica. Minha jornada acadêmica me proporcionou uma base sólida em matemática, física e pensamento computacional.",
-    "about.p2": "Sou apaixonado por construir coisas—seja sistemas robóticos, aplicações de software ou conceitos inovadores de produtos. Prospero na interseção entre engenharia e negócios, onde soluções técnicas encontram necessidades reais do mercado.",
-    "about.p3": "Meu objetivo é seguir uma carreira em desenvolvimento de produtos, capital de risco ou consultoria de gestão, onde posso aproveitar minha formação técnica para impulsionar a inovação e criar valor.",
     "about.featured": "Projetos em Destaque:",
     "about.project1": "Robô Hexápode MIE243 - Sistema de posicionamento de câmera de alta velocidade",
     "about.project2": "Monitor de Sono Inteligente APS112 - Dispositivo IoT para saúde do UHN",
@@ -180,38 +145,9 @@ const translations: Record<Language, Record<string, string>> = {
     "experience.title": "Experiência & Educação",
     "experience.description": "Minha jornada acadêmica e experiências profissionais que moldaram minha perspectiva de engenharia.",
     
-    // Experience items
-    "exp.uoft.title": "Ciências da Engenharia",
-    "exp.uoft.org": "Universidade de Toronto",
-    "exp.uoft.period": "2022 - Presente",
-    "exp.uoft.desc": "Cursando graduação em Ciências da Engenharia com especialização em Engenharia Robótica. Focado em matemática avançada, física e métodos computacionais.",
-    "exp.uoft.h1": "Média: 3.5/4.0",
-    "exp.uoft.h2": "Lista do Reitor",
-    "exp.uoft.h3": "Especialização em Robótica",
     
-    "exp.research.title": "Assistente de Pesquisa",
-    "exp.research.org": "Universidade de Toronto",
-    "exp.research.period": "Verão 2024",
-    "exp.research.desc": "Contribuí para pesquisas em robótica e automação, focando em aplicações de visão computacional e algoritmos de aprendizado de máquina.",
-    "exp.research.h1": "Pesquisa em Visão Computacional",
-    "exp.research.h2": "Aplicações de Machine Learning",
-    "exp.research.h3": "Artigo de Pesquisa Publicado",
     
-    "exp.intern.title": "Estagiário de Engenharia",
-    "exp.intern.org": "Empresa de Tecnologia",
-    "exp.intern.period": "Verão 2023",
-    "exp.intern.desc": "Trabalhei em desenvolvimento de produtos e prototipagem, ganhando experiência prática no processo de design de engenharia.",
-    "exp.intern.h1": "Desenvolvimento de Produtos",
-    "exp.intern.h2": "Design CAD & Prototipagem",
-    "exp.intern.h3": "Colaboração em Equipe Multifuncional",
     
-    "exp.club.title": "Líder de Clube de Engenharia",
-    "exp.club.org": "Universidade de Toronto",
-    "exp.club.period": "2023 - Presente",
-    "exp.club.desc": "Liderando uma equipe de estudantes de engenharia em vários projetos técnicos e competições, fomentando inovação e trabalho em equipe.",
-    "exp.club.h1": "Liderança de Equipe",
-    "exp.club.h2": "Gerenciamento de Projetos",
-    "exp.club.h3": "Participação em Competições",
     
     // Skills
     "skills.title": "Habilidades & Especialidades",

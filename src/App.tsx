@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { LanguageProvider } from "@/components/LanguageProvider";
+import ScrollToHash from "@/components/ScrollToHash";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import MIE243Project from "./pages/projects/MIE243Project";
@@ -12,6 +13,7 @@ import CatVisionProject from "./pages/projects/CatVisionProject";
 import APS112Project from "./pages/projects/APS112Project";
 import DOTEnergyProject from "./pages/projects/DOTEnergyProject";
 import CoronaKillerProject from "./pages/projects/CoronaKillerProject";
+import AuditoriumAIProject from "./pages/projects/AuditoriumAIProject";
 import NFCWelcome from "./pages/NFCWelcome";
 
 const queryClient = new QueryClient();
@@ -24,9 +26,11 @@ const App = () => (
           <Toaster />
           <Sonner />
           <BrowserRouter basename={import.meta.env.BASE_URL}>
+            <ScrollToHash />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/nfc" element={<NFCWelcome />} />
+              <Route path="/projects/auditorium-ai" element={<AuditoriumAIProject />} />
               <Route path="/projects/mie243" element={<MIE243Project />} />
               <Route path="/projects/cat-vision" element={<CatVisionProject />} />
               <Route path="/projects/aps112" element={<APS112Project />} />
