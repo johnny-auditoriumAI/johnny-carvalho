@@ -1,10 +1,11 @@
-import { ArrowLeft, Briefcase, Layers, Lightbulb, Rocket } from "lucide-react";
+import { ArrowLeft, Briefcase, Layers, Lightbulb, Palette, Rocket } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/components/LanguageProvider";
+import auditoriumLogo from "@/assets/projects/auditorium-logo.png";
 
 const AuditoriumAIProject = () => {
   const { language, t } = useLanguage();
@@ -32,6 +33,15 @@ const AuditoriumAIProject = () => {
       step4Desc: "Authored an eight-module training curriculum for operators new to lighting consoles.",
       step5Title: "5. Field Device Integration",
       step5Desc: "Integrated hardware and software for a single-board-computer field device, including field updates, device driver rules, and a 3D-printed enclosure designed in Fusion 360.",
+      designSystemTitle: "The Design System",
+      designSystemDesc: "The interface design system I built, reproduced here from its design tokens. A near-black surface stack keeps the interface recessive in a darkened venue, while a four-colour brand ramp carries state and emphasis. Oswald sets headings against Inter for body copy and interface labels.",
+      paletteTitle: "Brand ramp",
+      surfacesTitle: "Surface stack",
+      typographyTitle: "Typography",
+      headingFace: "Oswald · headings",
+      bodyFace: "Inter · body and interface labels",
+      typeSample: "Lighting with intent",
+      typeSampleBody: "A four-colour ramp over a near-black surface stack, so the interface stays readable from a console in a darkened room.",
       contributions: [
         "Spatial-calibration feature development",
         "Failure-mode investigation and validation",
@@ -68,6 +78,15 @@ const AuditoriumAIProject = () => {
       step4Desc: "Escrevi um currículo de treinamento de oito módulos para operadores iniciantes em mesas de iluminação.",
       step5Title: "5. Integração de Dispositivo de Campo",
       step5Desc: "Integrei hardware e software para um dispositivo de campo baseado em single-board computer, incluindo atualizações em campo, regras de driver de dispositivo e um invólucro impresso em 3D projetado no Fusion 360.",
+      designSystemTitle: "O Design System",
+      designSystemDesc: "O design system de interface que construí, reproduzido aqui a partir de seus design tokens. Uma pilha de superfícies quase pretas mantém a interface discreta em um ambiente escuro, enquanto uma rampa de quatro cores da marca carrega estado e ênfase. Oswald define os títulos, com Inter para o texto e rótulos de interface.",
+      paletteTitle: "Rampa da marca",
+      surfacesTitle: "Pilha de superfícies",
+      typographyTitle: "Tipografia",
+      headingFace: "Oswald · títulos",
+      bodyFace: "Inter · texto e rótulos de interface",
+      typeSample: "Iluminação com intenção",
+      typeSampleBody: "Uma rampa de quatro cores sobre uma pilha de superfícies quase pretas, para que a interface permaneça legível a partir de uma mesa em uma sala escura.",
       contributions: [
         "Desenvolvimento do recurso de calibração espacial",
         "Investigação de modos de falha e validação",
@@ -85,6 +104,23 @@ const AuditoriumAIProject = () => {
   };
 
   const c = content[language];
+
+  // Reproduced from the design system's tokens.
+  const brandRamp = [
+    { name: "Violet", hex: "#7755CF" },
+    { name: "Magenta", hex: "#CC6E97" },
+    { name: "Cyan", hex: "#5A96E4" },
+    { name: "Warm Yellow", hex: "#F0B167" },
+  ];
+
+  const surfaces = [
+    { name: "Background", hex: "#03060B" },
+    { name: "Card", hex: "#070B14" },
+    { name: "Muted", hex: "#1B2231" },
+    { name: "Border", hex: "#20293B" },
+  ];
+
+  const brandGradient = "linear-gradient(135deg, #7755CF, #CC6E97, #5A96E4)";
 
   const steps = [
     { title: c.step1Title, desc: c.step1Desc },
@@ -110,9 +146,16 @@ const AuditoriumAIProject = () => {
 
           <div className="max-w-4xl">
             <Badge variant="outline" className="mb-4">{c.badge}</Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4">
-              {c.title}
-            </h1>
+            <div className="flex items-center gap-4 mb-4">
+              <img
+                src={auditoriumLogo}
+                alt="Auditorium AI"
+                className="h-12 md:h-16 w-auto object-contain flex-shrink-0"
+              />
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary">
+                {c.title}
+              </h1>
+            </div>
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-6">
               <p className="text-xl md:text-2xl font-semibold text-accent">{c.role}</p>
               <span className="text-muted-foreground">·</span>
@@ -176,6 +219,86 @@ const AuditoriumAIProject = () => {
                     <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            {/* Design System */}
+            <div className="mb-16">
+              <h2 className="text-3xl font-bold text-primary mb-6 flex items-center gap-3">
+                <Palette className="w-8 h-8 text-accent" />
+                {c.designSystemTitle}
+              </h2>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-8">
+                {c.designSystemDesc}
+              </p>
+
+              {/* Rendered on the system's own near-black surface, as it appears in product */}
+              <div
+                className="rounded-xl border border-border overflow-hidden"
+                style={{ backgroundColor: "#03060B" }}
+              >
+                <div className="h-1.5 w-full" style={{ background: brandGradient }} />
+
+                <div className="p-6 md:p-8 space-y-8">
+                  {/* Brand ramp */}
+                  <div>
+                    <p className="text-xs uppercase tracking-widest text-white/40 mb-4">
+                      {c.paletteTitle}
+                    </p>
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                      {brandRamp.map((swatch) => (
+                        <div key={swatch.hex}>
+                          <div
+                            className="h-16 rounded-lg mb-2"
+                            style={{ backgroundColor: swatch.hex }}
+                          />
+                          <p className="text-sm text-white/90">{swatch.name}</p>
+                          <p className="text-xs font-mono text-white/40">{swatch.hex}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Surface stack */}
+                  <div>
+                    <p className="text-xs uppercase tracking-widest text-white/40 mb-4">
+                      {c.surfacesTitle}
+                    </p>
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                      {surfaces.map((swatch) => (
+                        <div key={swatch.hex}>
+                          <div
+                            className="h-12 rounded-lg mb-2 border border-white/10"
+                            style={{ backgroundColor: swatch.hex }}
+                          />
+                          <p className="text-sm text-white/90">{swatch.name}</p>
+                          <p className="text-xs font-mono text-white/40">{swatch.hex}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Typography */}
+                  <div>
+                    <p className="text-xs uppercase tracking-widest text-white/40 mb-4">
+                      {c.typographyTitle}
+                    </p>
+                    <p
+                      className="text-3xl md:text-4xl mb-1 uppercase tracking-wide"
+                      style={{ fontFamily: "Oswald, sans-serif", fontWeight: 600, color: "#FAFAFA" }}
+                    >
+                      {c.typeSample}
+                    </p>
+                    <p className="text-xs text-white/40 mb-5">{c.headingFace}</p>
+                    <p
+                      className="text-base leading-relaxed max-w-xl"
+                      style={{ fontFamily: "Inter, sans-serif", fontWeight: 300, color: "#FAFAFACC" }}
+                    >
+                      {c.typeSampleBody}
+                    </p>
+                    <p className="text-xs text-white/40 mt-2">{c.bodyFace}</p>
+                  </div>
+                </div>
               </div>
             </div>
 
