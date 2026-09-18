@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { LanguageProvider } from "@/components/LanguageProvider";
+import ScrollToHash from "@/components/ScrollToHash";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import MIE243Project from "./pages/projects/MIE243Project";
@@ -25,6 +26,7 @@ const App = () => (
           <Toaster />
           <Sonner />
           <BrowserRouter basename={import.meta.env.BASE_URL}>
+            <ScrollToHash />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/nfc" element={<NFCWelcome />} />
