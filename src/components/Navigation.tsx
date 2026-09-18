@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { LanguageToggle } from "@/components/LanguageToggle";
 import { useLanguage } from "@/components/LanguageProvider";
+import { scrollToHashTarget } from "@/lib/scroll";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,7 +35,7 @@ const Navigation = () => {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     if (isHomePage) {
-      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+      scrollToHashTarget(href);
     } else {
       navigate("/" + href);
     }

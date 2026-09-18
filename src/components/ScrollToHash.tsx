@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-
-// Height of the fixed navigation bar, so a section doesn't land underneath it.
-const NAV_OFFSET = 80;
+import { scrollToHashTarget } from "@/lib/scroll";
 
 /**
  * React Router does not scroll to hash fragments on navigation, so links like
@@ -24,11 +22,7 @@ const ScrollToHash = () => {
     // After a cross-page navigation the target section isn't mounted on the
     // first frame, so retry briefly before giving up.
     const scrollToTarget = () => {
-      const target = document.querySelector(hash);
-
-      if (target) {
-        const top = target.getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
-        window.scrollTo({ top: Math.max(top, 0), behavior: "smooth" });
+      if (scrollToHashTarget(hash)) {
         return;
       }
 
