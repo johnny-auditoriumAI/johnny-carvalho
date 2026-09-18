@@ -111,11 +111,11 @@ const AuditoriumAIProject = () => {
   const PAPER = "#F2ECE3";
   const INK = "#0A0B0D";
 
+  // Rust is the whole accent. The greens in the token block come from the
+  // device model's LED, not the brand palette, so they're left out.
   const accentRamp = [
     { name: "Rust", token: "--color-rust", hex: "#C53D23" },
     { name: "Rust deep", token: "--color-rust-deep", hex: "#9C2911" },
-    { name: "Green", token: "--color-green", hex: "#348F4F" },
-    { name: "Acid", token: "--color-acid", hex: "#71FE00" },
   ];
 
   const neutralRamp = [
@@ -254,7 +254,7 @@ const AuditoriumAIProject = () => {
                     >
                       {c.brandTitle}
                     </p>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-2 gap-4">
                       {accentRamp.map((swatch) => (
                         <div key={swatch.token}>
                           <div
