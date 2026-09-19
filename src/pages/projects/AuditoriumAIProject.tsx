@@ -1,10 +1,12 @@
-import { ArrowLeft, Briefcase, Layers, Lightbulb, Rocket } from "lucide-react";
+import { ArrowLeft, Briefcase, Layers, Lightbulb, Palette, Rocket } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { useLanguage } from "@/components/LanguageProvider";
+import edgeEnclosure from "@/assets/projects/auditorium-edge-enclosure.png";
+import AuditoriumMark from "@/components/AuditoriumMark";
 
 const AuditoriumAIProject = () => {
   const { language, t } = useLanguage();
@@ -31,7 +33,18 @@ const AuditoriumAIProject = () => {
       step4Title: "4. Operator Training Curriculum",
       step4Desc: "Authored an eight-module training curriculum for operators new to lighting consoles.",
       step5Title: "5. Field Device Integration",
-      step5Desc: "Integrated hardware and software for a single-board-computer field device, including field updates, device driver rules, and a 3D-printed enclosure designed in Fusion 360.",
+      step5Desc: "Integrated hardware and software for a single-board-computer field device, including field updates, device driver rules, and a 3D-printed enclosure designed in Fusion 360. The device drives a fixture library of roughly 40 DMX profiles, spanning manufacturers including Chauvet, Martin, ADJ, Antari and Prolights.",
+      enclosureCaption: "The field device: a single-board computer in a 3D-printed enclosure designed in Fusion 360, with DMX and power on the rear panel.",
+      designSystemTitle: "The Design System",
+      designSystemDesc: "The interface design system I built, reproduced from its shipped tokens. It runs light rather than dark: a warm paper ground with near-black ink, a single rust accent carrying emphasis and state, and Inter across the whole range with JetBrains Mono for numerics and technical labels. Motion is tokenised too, on a vocabulary borrowed from the theatre.",
+      brandTitle: "Accent",
+      neutralsTitle: "Paper and ink",
+      typographyTitle: "Typography",
+      motionTitle: "Motion",
+      typeSample: "Lighting with intent",
+      typeSampleBody: "One accent against a warm paper ground, so emphasis reads instantly and everything else stays quiet.",
+      displayFace: "Inter — display and body",
+      monoFace: "JetBrains Mono — numerics and technical labels",
       contributions: [
         "Spatial-calibration feature development",
         "Failure-mode investigation and validation",
@@ -67,7 +80,18 @@ const AuditoriumAIProject = () => {
       step4Title: "4. Currículo de Treinamento",
       step4Desc: "Escrevi um currículo de treinamento de oito módulos para operadores iniciantes em mesas de iluminação.",
       step5Title: "5. Integração de Dispositivo de Campo",
-      step5Desc: "Integrei hardware e software para um dispositivo de campo baseado em single-board computer, incluindo atualizações em campo, regras de driver de dispositivo e um invólucro impresso em 3D projetado no Fusion 360.",
+      step5Desc: "Integrei hardware e software para um dispositivo de campo baseado em single-board computer, incluindo atualizações em campo, regras de driver de dispositivo e um invólucro impresso em 3D projetado no Fusion 360. O dispositivo controla uma biblioteca de cerca de 40 perfis DMX, abrangendo fabricantes como Chauvet, Martin, ADJ, Antari e Prolights.",
+      enclosureCaption: "O dispositivo de campo: um single-board computer em um invólucro impresso em 3D projetado no Fusion 360, com DMX e alimentação no painel traseiro.",
+      designSystemTitle: "O Design System",
+      designSystemDesc: "O design system de interface que construí, reproduzido a partir de seus tokens em produção. Ele é claro, não escuro: um fundo de papel quente com tinta quase preta, um único acento rust carregando ênfase e estado, e Inter em toda a escala, com JetBrains Mono para números e rótulos técnicos. O movimento também é tokenizado, com um vocabulário emprestado do teatro.",
+      brandTitle: "Acento",
+      neutralsTitle: "Papel e tinta",
+      typographyTitle: "Tipografia",
+      motionTitle: "Movimento",
+      typeSample: "Iluminação com intenção",
+      typeSampleBody: "Um único acento sobre um fundo de papel quente, para que a ênfase seja lida instantaneamente e todo o resto permaneça discreto.",
+      displayFace: "Inter — títulos e texto",
+      monoFace: "JetBrains Mono — números e rótulos técnicos",
       contributions: [
         "Desenvolvimento do recurso de calibração espacial",
         "Investigação de modos de falha e validação",
@@ -85,6 +109,35 @@ const AuditoriumAIProject = () => {
   };
 
   const c = content[language];
+
+  // Reproduced from the design system's shipped tokens (src/styles/app.css).
+  // Source values are OKLCH; the sRGB hex beside each one is what renders here.
+  const PAPER = "#F2ECE3";
+  const INK = "#0A0B0D";
+
+  // Rust is the whole accent. The greens in the token block come from the
+  // device model's LED, not the brand palette, so they're left out.
+  const accentRamp = [
+    { name: "Rust", token: "--color-rust", hex: "#C53D23" },
+    { name: "Rust deep", token: "--color-rust-deep", hex: "#9C2911" },
+  ];
+
+  const neutralRamp = [
+    { name: "Paper", token: "--color-paper", hex: PAPER },
+    { name: "Ash soft", token: "--color-ash-soft", hex: "#D6D7DA" },
+    { name: "Ash", token: "--color-ash", hex: "#B6B7BB" },
+    { name: "Ink soft", token: "--color-ink-soft", hex: "#46484A" },
+    { name: "Ink", token: "--color-ink", hex: INK },
+  ];
+
+  // Easings named for stage cues rather than curves.
+  const motionTokens = [
+    { name: "shutter", curve: "cubic-bezier(0.16, 1, 0.3, 1)" },
+    { name: "cue", curve: "cubic-bezier(0.6, 0, 0.4, 1)" },
+    { name: "snap", curve: "cubic-bezier(0.2, 0.9, 0.2, 1)" },
+    { name: "curtain", curve: "cubic-bezier(0.87, 0, 0.13, 1)" },
+    { name: "breath", curve: "cubic-bezier(0.45, 0, 0.55, 1)" },
+  ];
 
   const steps = [
     { title: c.step1Title, desc: c.step1Desc },
@@ -110,9 +163,13 @@ const AuditoriumAIProject = () => {
 
           <div className="max-w-4xl">
             <Badge variant="outline" className="mb-4">{c.badge}</Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-4">
-              {c.title}
-            </h1>
+            <div className="flex items-center gap-4 mb-4">
+              {/* Rust is one of the three colours the brand rules permit */}
+              <AuditoriumMark className="h-10 md:h-14 w-auto flex-shrink-0 text-[#C53D23]" />
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary">
+                {c.title}
+              </h1>
+            </div>
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-6">
               <p className="text-xl md:text-2xl font-semibold text-accent">{c.role}</p>
               <span className="text-muted-foreground">·</span>
@@ -176,6 +233,158 @@ const AuditoriumAIProject = () => {
                     <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            {/* Field device */}
+            <figure className="mb-16">
+              <div
+                className="rounded-xl overflow-hidden border border-border"
+                style={{ backgroundColor: PAPER }}
+              >
+                <img
+                  src={edgeEnclosure}
+                  alt={c.enclosureCaption}
+                  className="w-full h-auto object-contain"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption className="text-sm text-muted-foreground mt-3">
+                {c.enclosureCaption}
+              </figcaption>
+            </figure>
+
+            {/* Design System */}
+            <div className="mb-16">
+              <h2 className="text-3xl font-bold text-primary mb-6 flex items-center gap-3">
+                <Palette className="w-8 h-8 text-accent" />
+                {c.designSystemTitle}
+              </h2>
+              <p className="text-muted-foreground leading-relaxed text-lg mb-8">
+                {c.designSystemDesc}
+              </p>
+
+              {/* Rendered on the system's own paper ground, as it appears in product */}
+              <div
+                className="rounded-xl border border-border overflow-hidden"
+                style={{ backgroundColor: PAPER, color: INK }}
+              >
+                <div className="h-1.5 w-full" style={{ backgroundColor: "#C53D23" }} />
+
+                <div className="p-6 md:p-8 space-y-8">
+                  {/* Accent */}
+                  <div>
+                    <p
+                      className="text-xs uppercase tracking-widest mb-4"
+                      style={{ color: "#46484A", fontFamily: "'JetBrains Mono', monospace" }}
+                    >
+                      {c.brandTitle}
+                    </p>
+                    <div className="grid grid-cols-2 gap-4">
+                      {accentRamp.map((swatch) => (
+                        <div key={swatch.token}>
+                          <div
+                            className="h-16 rounded-lg mb-2"
+                            style={{ backgroundColor: swatch.hex }}
+                          />
+                          <p className="text-sm font-medium">{swatch.name}</p>
+                          <p
+                            className="text-xs"
+                            style={{ color: "#46484A", fontFamily: "'JetBrains Mono', monospace" }}
+                          >
+                            {swatch.hex}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Paper and ink */}
+                  <div>
+                    <p
+                      className="text-xs uppercase tracking-widest mb-4"
+                      style={{ color: "#46484A", fontFamily: "'JetBrains Mono', monospace" }}
+                    >
+                      {c.neutralsTitle}
+                    </p>
+                    <div className="grid grid-cols-3 sm:grid-cols-5 gap-4">
+                      {neutralRamp.map((swatch) => (
+                        <div key={swatch.token}>
+                          <div
+                            className="h-12 rounded-lg mb-2"
+                            style={{
+                              backgroundColor: swatch.hex,
+                              border: "1px solid rgba(10, 11, 13, 0.12)",
+                            }}
+                          />
+                          <p className="text-sm font-medium">{swatch.name}</p>
+                          <p
+                            className="text-xs"
+                            style={{ color: "#46484A", fontFamily: "'JetBrains Mono', monospace" }}
+                          >
+                            {swatch.hex}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Typography */}
+                  <div>
+                    <p
+                      className="text-xs uppercase tracking-widest mb-4"
+                      style={{ color: "#46484A", fontFamily: "'JetBrains Mono', monospace" }}
+                    >
+                      {c.typographyTitle}
+                    </p>
+                    <p
+                      className="text-3xl md:text-4xl mb-1"
+                      style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, letterSpacing: "-0.02em" }}
+                    >
+                      {c.typeSample}
+                    </p>
+                    <p className="text-xs mb-5" style={{ color: "#46484A" }}>{c.displayFace}</p>
+                    <p
+                      className="text-base leading-relaxed max-w-xl mb-5"
+                      style={{ fontFamily: "Inter, sans-serif", fontWeight: 400 }}
+                    >
+                      {c.typeSampleBody}
+                    </p>
+                    <p
+                      className="text-sm"
+                      style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: 500 }}
+                    >
+                      DMX 512 · 44.1 kHz · 0.00 → 1.00
+                    </p>
+                    <p className="text-xs mt-1" style={{ color: "#46484A" }}>{c.monoFace}</p>
+                  </div>
+
+                  {/* Motion */}
+                  <div>
+                    <p
+                      className="text-xs uppercase tracking-widest mb-4"
+                      style={{ color: "#46484A", fontFamily: "'JetBrains Mono', monospace" }}
+                    >
+                      {c.motionTitle}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {motionTokens.map((token) => (
+                        <span
+                          key={token.name}
+                          title={token.curve}
+                          className="text-xs px-3 py-1.5 rounded-md"
+                          style={{
+                            fontFamily: "'JetBrains Mono', monospace",
+                            backgroundColor: "rgba(10, 11, 13, 0.06)",
+                            border: "1px solid rgba(10, 11, 13, 0.12)",
+                          }}
+                        >
+                          --ease-{token.name}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
