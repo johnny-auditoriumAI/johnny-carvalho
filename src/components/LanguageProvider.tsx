@@ -20,9 +20,9 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Hero
     "hero.name": "JOHNNY\nCAMPOS",
-    "hero.title": "Engineering Student",
+    "hero.title": "Mechanical Engineering — Seeking PEY Co-op 2027",
     "hero.university": "University of Toronto",
-    "hero.description": "Focused on engineering design, technology innovation, and data-driven problem solving",
+    "hero.description": "I build products and robots. U of T mechanical engineering (Robotics & Mechatronics + Engineering Business minors), targeting a 12–16 month PEY co-op in startup product/ops or robotics",
     "hero.download": "Download Resume",
     "hero.view": "View",
     
@@ -111,9 +111,9 @@ const translations: Record<Language, Record<string, string>> = {
     
     // Hero
     "hero.name": "JOÃO\nCAMPOS",
-    "hero.title": "Estudante de Engenharia",
+    "hero.title": "Engenharia Mecânica — Buscando estágio PEY 2027",
     "hero.university": "Universidade de Toronto",
-    "hero.description": "Focado em design de engenharia, inovação tecnológica e resolução de problemas orientada por dados",
+    "hero.description": "Construo produtos e robôs. Engenharia mecânica na U of T (ênfases em Robótica & Mecatrônica e Negócios em Engenharia), buscando um co-op PEY de 12–16 meses em produto/operações de startup ou robótica",
     "hero.download": "Baixar Currículo",
     "hero.view": "Ver",
     
