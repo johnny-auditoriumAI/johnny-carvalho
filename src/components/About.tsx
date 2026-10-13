@@ -16,7 +16,7 @@ const About = () => {
               <>
                 <p className="text-lg text-foreground leading-relaxed">
                   Sou estudante de engenharia mecânica na <span className="font-semibold text-primary">Universidade de Toronto</span>, 
-                  apaixonado por robótica, agritech, computação e desenvolvimento de produtos. Minha jornada acadêmica me 
+                  apaixonado por robótica, computação e desenvolvimento de produtos. Minha jornada acadêmica me 
                   proporcionou uma base sólida em princípios de engenharia, prototipagem prática, 
                   <span className="font-semibold text-primary"> modelagem CAD usando SolidWorks</span> e análise técnica.
                 </p>
@@ -31,8 +31,9 @@ const About = () => {
                 <p className="text-lg text-foreground leading-relaxed">
                   Sou atraído por funções onde posso projetar mecanismos, integrar hardware e software, liderar
                   equipes multidisciplinares e construir produtos em <span className="font-semibold text-primary">ambientes de startup</span>.
-                  Foi exatamente isso que fiz como <span className="font-semibold text-primary">Engenheiro de Design Líder na Auditorium AI</span>,
-                  onde trabalhei em um dispositivo de campo baseado em single-board computer e seu invólucro impresso em 3D, em um recurso de
+                  Foi exatamente isso que fiz na <span className="font-semibold text-primary">Auditorium AI</span>,
+                  primeiro como <span className="font-semibold text-primary">Engenheiro de Design Líder</span> e agora como{" "}
+                  <span className="font-semibold text-primary">Líder de Operações</span>, onde trabalhei em um dispositivo de campo baseado em single-board computer e seu invólucro impresso em 3D, em um recurso de
                   calibração espacial para iluminação cênica automatizada, e em um design system unificado adotado no aplicativo do operador
                   e no site de marketing.
                 </p>
@@ -48,7 +49,7 @@ const About = () => {
               <>
                 <p className="text-lg text-foreground leading-relaxed">
                   I'm a mechanical engineering student at the <span className="font-semibold text-primary">University of Toronto</span>, 
-                  passionate about robotics, agritech, computation, and product development. My academic journey has 
+                  passionate about robotics, computation, and product development. My academic journey has 
                   equipped me with a strong foundation in engineering principles, hands-on prototyping, 
                   <span className="font-semibold text-primary"> CAD modeling using SolidWorks</span>, and technical analysis.
                 </p>
@@ -63,7 +64,9 @@ const About = () => {
                 <p className="text-lg text-foreground leading-relaxed">
                   I'm drawn to roles where I can design mechanisms, integrate hardware and software, lead multidisciplinary
                   teams, and build products within <span className="font-semibold text-primary">startup environments</span>.
-                  Most recently I did exactly that as <span className="font-semibold text-primary">Lead Design Engineer at Auditorium AI</span>,
+                  I did exactly that at <span className="font-semibold text-primary">Auditorium AI</span>,
+                  first as <span className="font-semibold text-primary">Lead Design Engineer</span> and now as{" "}
+                  <span className="font-semibold text-primary">Operations Lead</span>,
                   working across a single-board-computer field device and its 3D-printed enclosure, a spatial-calibration feature for
                   automated stage lighting, and a unified design system adopted across the operator application and marketing site.
                 </p>
