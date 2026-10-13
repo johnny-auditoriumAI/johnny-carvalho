@@ -90,7 +90,7 @@ const Experience = () => {
     },
     {
       type: "extracurricular",
-      title: language === "pt" ? "Braço Robótico DUM E" : "DUM E Robotic Arm",
+      title: language === "pt" ? "Projeto de Robótica" : "Robotics Project",
       organization: language === "pt" ? "Projeto Pessoal" : "Personal Project",
       period: language === "pt" ? "Set. 2026 – Presente" : "Sep. 2026 – Present",
       description: language === "pt"
