@@ -15,14 +15,34 @@ const Experience = () => {
       description: language === "pt" ? "Minors em Robótica & Mecatrônica e Negócios de Engenharia" : "Minors in Robotics & Mechatronics and Engineering Business",
       highlights: language === "pt" 
         ? [
-            "Mantendo média 3.48",
+            "Mantendo média 3.25",
             "Foco em design mecânico, robótica e desenvolvimento de produtos",
             "Participante ativo em equipes de design de engenharia e competições"
           ]
         : [
-            "Maintaining 3.48 GPA",
+            "Maintaining 3.25 GPA",
             "Focus on mechanical design, robotics, and product development",
             "Active participant in engineering design teams and competitions"
+          ]
+    },
+    {
+      type: "work",
+      title: language === "pt" ? "Líder de Operações" : "Operations Lead",
+      organization: language === "pt" ? "Auditorium AI Inc., Toronto, Canadá" : "Auditorium AI Inc., Toronto, Canada",
+      period: language === "pt" ? "Set. 2026 – Presente" : "Sep. 2026 – Present",
+      description: language === "pt"
+        ? "Operações de eventos e sistemas para uma startup de iluminação cênica automatizada"
+        : "Event operations and operating systems for an automated stage lighting startup",
+      highlights: language === "pt"
+        ? [
+            "Construí o sistema operacional: drive financeiro compartilhado, rastreador de P&L por evento, pipeline de negócios, inventário de equipamentos e relatórios semanais aos fundadores",
+            "Gerencio uma líder de conteúdo que entrega 8 peças por mês com base em brief aprovado, com check-ins semanais",
+            "Configurei e gerenciei um fluxo de desenvolvimento assistido por IA para o produto web da empresa, coordenando código gerado por IA em uma base de código revisada e funcional"
+          ]
+        : [
+            "Built the operating system: shared finance drive, per-event P&L tracker, deals pipeline, gear inventory, weekly founder reports",
+            "Manage a content lead shipping 8 pieces per month against an approved brief, with weekly check-ins",
+            "Set up and managed an AI-assisted development workflow for the company web product, coordinating AI-generated code into a reviewed, working codebase"
           ]
     },
     {
@@ -52,7 +72,7 @@ const Experience = () => {
     },
     {
       type: "work",
-      title: language === "pt" ? "Diretor de Divulgação" : "Director of Outreach",
+      title: language === "pt" ? "Vice-Presidente de Divulgação" : "VP of Outreach",
       organization: "UTESCA, Toronto",
       period: language === "pt" ? "Setembro 2025 – Presente" : "September 2025 – Present",
       description: language === "pt" 
@@ -66,6 +86,42 @@ const Experience = () => {
         : [
             "Researched and identified potential partners in prestigious consulting firms with 80% conversion rate",
             "Developed automation pipeline to optimize partner outreach, resulting in 20+ partners registered"
+          ]
+    },
+    {
+      type: "extracurricular",
+      title: language === "pt" ? "Braço Robótico DUM E" : "DUM E Robotic Arm",
+      organization: language === "pt" ? "Projeto Pessoal" : "Personal Project",
+      period: language === "pt" ? "Set. 2026 – Presente" : "Sep. 2026 – Present",
+      description: language === "pt"
+        ? "Construção mecânica de um braço robótico baseado em SO-101"
+        : "Mechanical build of an SO-101-based robotic arm",
+      highlights: language === "pt"
+        ? [
+            "CAD, montagem e testes de validação com equipe de 3 pessoas",
+            "Responsável por captação de financiamento/patrocínio e administração da equipe/GitHub"
+          ]
+        : [
+            "CAD, assembly, and validation testing with a 3-person team",
+            "Own funding/sponsorship outreach and team admin/GitHub"
+          ]
+    },
+    {
+      type: "extracurricular",
+      title: "Eye-Tracker",
+      organization: language === "pt" ? "Projeto Pessoal" : "Personal Project",
+      period: "2026 – Present",
+      description: language === "pt"
+        ? "Camada de controle por rastreamento de olhar via webcam"
+        : "Webcam-based gaze-tracking control layer",
+      highlights: language === "pt"
+        ? [
+            "Controle total do computador sem as mãos, sem teclado ou mouse",
+            "Modelo de interação olhar + voz: gesto de palma aberta como push-to-talk, confirmações destrutivas apenas por voz"
+          ]
+        : [
+            "Full hands-free computer control with zero keyboard or mouse input",
+            "Gaze-plus-voice interaction model: open-palm gesture as push-to-talk, voice-only destructive confirmations"
           ]
     },
     {
@@ -175,7 +231,7 @@ const Experience = () => {
   );
 };
 
-const TOTAL_CARDS = 7;
+const TOTAL_CARDS = 10;
 
 const ExperienceCard = ({ exp, index }: { exp: { type: string; title: string; organization: string; period: string; description: string; highlights: string[]; route?: string }; index: number }) => {
   const { language } = useLanguage();
