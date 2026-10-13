@@ -34,7 +34,6 @@ const Skills = () => {
             "Python (PyTorch, NumPy, Pandas)",
             "TypeScript & React",
             "C / C++ / C#",
-            "Rust",
             "MATLAB & Simulink",
             "Git & Controle de Versão"
           ]
@@ -42,7 +41,6 @@ const Skills = () => {
             "Python (PyTorch, NumPy, Pandas)",
             "TypeScript & React",
             "C / C++ / C#",
-            "Rust",
             "MATLAB & Simulink",
             "Git & Version Control"
           ]
