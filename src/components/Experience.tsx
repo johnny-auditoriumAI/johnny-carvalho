@@ -35,14 +35,18 @@ const Experience = () => {
         : "Event operations and operating systems for an automated stage lighting startup",
       highlights: language === "pt"
         ? [
-            "Construí o sistema operacional: drive financeiro compartilhado, rastreador de P&L por evento, pipeline de negócios, inventário de equipamentos e relatórios semanais aos fundadores",
-            "Gerencio uma líder de conteúdo que entrega 8 peças por mês com base em brief aprovado, com check-ins semanais",
-            "Configurei e gerenciei um fluxo de desenvolvimento assistido por IA para o produto web da empresa, coordenando código gerado por IA em uma base de código revisada e funcional"
+            "Responsável pelo P&L dos eventos com meta de 2 eventos lucrativos por mês, acompanhando receita e despesas por evento até uma margem verificada",
+            "Construí o sistema operacional: drive financeiro compartilhado, rastreador de P&L por evento, pipeline de negócios, inventário de equipamentos e relatórios semanais aos fundadores, dando aos fundadores uma visão permanente de dinheiro, negócios e equipamentos",
+            "Desenhei o modelo de escalação da equipe: banco de talentos casual escalado apenas nos dias de evento, 1-2 membros por evento (até 3 para eventos maiores), com custo por evento acompanhado em relação à margem",
+            "Gerencio uma líder de conteúdo com base em brief aprovado e check-ins semanais, entregando 8 peças por mês em cadência constante",
+            "Configurei e gerenciei um fluxo de desenvolvimento assistido por IA para o produto web da empresa, coordenando código gerado por IA com foco em frontend por meio de revisão até uma base de código funcional"
           ]
         : [
-            "Built the operating system: shared finance drive, per-event P&L tracker, deals pipeline, gear inventory, weekly founder reports",
-            "Manage a content lead shipping 8 pieces per month against an approved brief, with weekly check-ins",
-            "Set up and managed an AI-assisted development workflow for the company web product, coordinating AI-generated code into a reviewed, working codebase"
+            "Own event P&L against a target of 2 profitable events per month, tracking revenue and expenses per event to a verified margin",
+            "Built the operating system, shared finance drive, per-event P&L tracker, deals pipeline, gear inventory, and weekly founder reports, giving founders a standing view of money, deals, and gear",
+            "Designed the crew staffing model: casual bench scheduled only on gig days, 1-2 crew per event (up to 3 for larger events), with per-event cost tracked against margin",
+            "Manage a content lead against an approved brief with weekly check-ins, shipping 8 pieces per month on a steady cadence",
+            "Set up and managed an AI-assisted development workflow for the company web product, coordinating frontend-heavy AI-generated code through review into a working codebase"
           ]
     },
     {
@@ -56,17 +60,15 @@ const Experience = () => {
       highlights: language === "pt"
         ? [
             "Desenvolvi um recurso de calibração espacial que mapeia iluminação cênica automatizada à geometria da sala, revelando dois modos de falha silenciosos que todas as verificações existentes haviam aprovado",
-            "Projetei um design system de interface unificado abrangendo tipografia, componentes, superfícies de cor e um conjunto de ícones próprio, adotado no aplicativo do operador e no site de marketing",
-            "Conduzi pesquisa independente de mercado e concorrência que redirecionou o segmento de clientes-alvo da empresa, e produzi a estratégia de canais subsequente",
             "Escrevi um currículo de treinamento de oito módulos para operadores iniciantes em mesas de iluminação",
-            "Integrei hardware e software para um dispositivo de campo baseado em single-board computer, incluindo atualizações em campo, regras de driver de dispositivo e um invólucro impresso em 3D projetado no Fusion 360"
+            "Integrei hardware e software para um dispositivo de campo baseado em single-board computer, incluindo atualizações em campo, regras de driver de dispositivo e um invólucro impresso em 3D projetado no Fusion 360",
+            "Conduzi pesquisa independente de mercado e concorrência que redirecionou o segmento de clientes-alvo da empresa, e produzi a estratégia de canais subsequente"
           ]
         : [
             "Engineered a spatial-calibration feature mapping automated stage lighting to room geometry, uncovering two silent failure modes that every existing check had passed",
-            "Designed a unified interface design system covering typography, components, colour surfaces, and a custom icon set, adopted across the operator application and marketing site",
-            "Conducted independent market and competitive research that redirected the company's target customer segment, and produced the follow-up channel strategy",
             "Authored an eight-module training curriculum for operators new to lighting consoles",
-            "Integrated hardware and software for a single-board-computer field device, including field updates, device driver rules, and a 3D-printed enclosure designed in Fusion 360"
+            "Integrated hardware and software for a single-board-computer field device, including field updates, device driver rules, and a 3D-printed enclosure designed in Fusion 360",
+            "Conducted independent market and competitive research that redirected the company's target customer segment, and produced the follow-up channel strategy"
           ],
       route: "/projects/auditorium-ai"
     },
@@ -80,12 +82,12 @@ const Experience = () => {
         : "Leading partnership development for U of T Engineering's consulting association",
       highlights: language === "pt" 
         ? [
-            "Pesquisei e identifiquei potenciais parceiros em prestigiosas consultorias com taxa de conversão de 80%",
-            "Desenvolvi pipeline de automação para otimizar divulgação de parceiros, resultando em 20+ parceiros registrados"
+            "Construí um rastreador de divulgação automatizado no Google Sheets para identificar e gerenciar 137 potenciais parceiros em consultorias, convertendo 15% em 20+ parceiros",
+            "Gerencio uma equipe de divulgação de 4 pessoas com cadência semanal de prospecção para parcerias em eventos, acompanhando cada contato do primeiro toque à reunião agendada"
           ]
         : [
-            "Researched and identified potential partners in prestigious consulting firms with 80% conversion rate",
-            "Developed automation pipeline to optimize partner outreach, resulting in 20+ partners registered"
+            "Built an automated outreach tracker in Google Sheets to identify and manage 137 prospects at consulting firms, converting 15% into 20+ partners",
+            "Manage a 4-person outreach team running a weekly prospecting cadence for event partnerships, tracking each contact from first touch to booked meeting"
           ]
     },
     {
@@ -110,18 +112,18 @@ const Experience = () => {
       type: "extracurricular",
       title: "Eye-Tracker",
       organization: language === "pt" ? "Projeto Pessoal" : "Personal Project",
-      period: "2026 – Present",
+      period: language === "pt" ? "Ago. 2026 – Presente" : "Aug. 2026 – Present",
       description: language === "pt"
-        ? "Camada de controle por rastreamento de olhar via webcam"
-        : "Webcam-based gaze-tracking control layer",
+        ? "Camada de controle por rastreamento de olhar"
+        : "Gaze-tracking control layer",
       highlights: language === "pt"
         ? [
-            "Controle total do computador sem as mãos, sem teclado ou mouse",
-            "Modelo de interação olhar + voz: gesto de palma aberta como push-to-talk, confirmações destrutivas apenas por voz"
+            "Construí uma camada de controle por rastreamento de olhar com 10 recursos, incluindo invocação por olhar, agir por pinça, atuação por voz e rastreamento ocular por pupila/reflexo montado na cabeça, permitindo controle do computador sem as mãos, sem teclado ou mouse",
+            "Desenhei o modelo de interação olhar + voz: gesto de palma aberta como push-to-talk, confirmações destrutivas apenas por voz e tutorial guiado por olhar/voz na primeira execução"
           ]
         : [
-            "Full hands-free computer control with zero keyboard or mouse input",
-            "Gaze-plus-voice interaction model: open-palm gesture as push-to-talk, voice-only destructive confirmations"
+            "Built a gaze-tracking control layer with 10 features, including gaze summoning, pinch-to-act, voice actuation, and head-mounted pupil/glint eye tracking, delivering hands-free computer control with zero keyboard or mouse input",
+            "Designed the gaze-plus-voice interaction model: open-palm gesture as push-to-talk, voice-only destructive confirmations, and a gaze/voice guided first-run tutorial"
           ]
     },
     {
@@ -154,11 +156,11 @@ const Experience = () => {
         : "Data analysis and automation for Brazil's largest chocolate franchise",
       highlights: language === "pt" 
         ? [
-            "Participei de análise de dados de publicidade e conversão, alcançando 10.000+ clientes",
+            "Analisei dados de publicidade e conversão cobrindo 10.000+ clientes",
             "Desenvolvi ferramenta Python para automatizar organização de dados, alcançando 98% de aumento de eficiência"
           ]
         : [
-            "Participated in advertising and conversion data analysis, reaching 10,000+ customers",
+            "Analyzed advertising and conversion data covering 10,000+ customers",
             "Developed Python tool to automate data organization, achieving 98% efficiency increase"
           ]
     },
@@ -172,14 +174,16 @@ const Experience = () => {
         : "Led robotics competition team in both simulation and practical categories",
       highlights: language === "pt" 
         ? [
-            "Projetei e programei código C# para categoria de simulação, alcançando posição final top 5",
-            "Manufaturei PCB personalizado, circuitos e sistema de resgate de vítimas com visão computacional",
-            "Responsável por detecção de obstáculos e seguimento de caminho para categoria prática"
+            "Projetei e programei o código de simulação em C#, ficando entre os 5 melhores nacionalmente",
+            "Projetei e manufaturei o PCB personalizado, os circuitos e o módulo de visão de resgate do robô, entregando o hardware para a participação na categoria prática",
+            "Construí sistemas embarcados em vários robôs de competição com Arduino, ESP32 e Raspberry Pi, entregando integração de sensores e controle de motores para robôs de competição",
+            "Liderei uma equipe de 3-5 pessoas como engenheiro chefe em design, construção e competição, competindo em 5 competições durante o ensino médio"
           ]
         : [
-            "Designed and programmed C# code for simulation category, achieving top 5 final position",
-            "Manufactured custom PCB, circuitry, and victim rescue system with computer vision",
-            "Responsible for obstacle detection and path-following for practical category"
+            "Designed and programmed the C# simulation code, placing top 5 nationally",
+            "Designed and manufactured the robot's custom PCB, circuitry, and rescue vision module, delivering the hardware for the team's practical-category entry",
+            "Built embedded systems across multiple robotics builds on Arduino, ESP32, and Raspberry Pi, delivering sensor integration and motor control for competition robots",
+            "Led a 3-5 person team as chief engineer across design, build, and competition, competing in 5 competitions over high school"
           ]
     },
     {
